@@ -10,11 +10,16 @@
 <link rel="stylesheet" href="styles.css"/>
 <link rel="stylesheet" href="animations.css"/>
 <style>
+/* CLEAN LIGHT LUXURY CLIENTS HERO */
 .clients-hero {
-  background: linear-gradient(135deg, #060f24 0%, #0a1f44 60%, #0d2b3a 100%);
-  padding: 110px 5% 80px;
+  background: #f4f7fb;
+  background-image: 
+    radial-gradient(circle at 10% 20%, rgba(0, 168, 107, 0.08) 0%, transparent 60%),
+    radial-gradient(circle at 90% 80%, rgba(201, 168, 76, 0.06) 0%, transparent 50%);
+  padding: 120px 5% 70px;
   position: relative;
   overflow: hidden;
+  border-bottom: 1px solid #e2e8f0;
 }
 .clients-hero-grid {
   display: grid;
@@ -27,43 +32,161 @@
   z-index: 2;
 }
 .clients-hero-content {
-  color: white;
+  color: #0a1f44;
+}
+.clients-hero-tag-clean {
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #007a4d;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .clients-hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 4.5vw, 54px);
+  font-size: clamp(32px, 4.5vw, 48px);
   font-weight: 800;
-  color: white;
-  line-height: 1.15;
-  margin-bottom: 16px;
+  color: #0a1f44;
+  line-height: 1.16;
+  margin-bottom: 14px;
 }
 .clients-hero h1 span {
-  color: #00c97f;
+  background: linear-gradient(135deg, #007a4d 0%, #00a86b 60%, #c9a84c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .clients-hero p {
-  font-size: 16.5px;
-  color: rgba(255,255,255,0.78);
-  line-height: 1.75;
+  font-size: 15.5px;
+  color: #475569;
+  line-height: 1.7;
+  margin-bottom: 22px;
+}
+
+/* HERO INTEGRATED TRACK RECORD METRICS */
+.hero-track-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 10px;
+}
+.hero-track-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 16px 14px;
+  box-shadow: 0 4px 14px rgba(10,31,68,0.04);
+  transition: all 0.3s ease;
+}
+.hero-track-card:hover {
+  transform: translateY(-3px);
+  border-color: #00a86b;
+  box-shadow: 0 10px 25px rgba(0,168,107,0.12);
+}
+.ht-num {
+  font-size: 22px;
+  font-weight: 900;
+  color: #00a86b;
+  line-height: 1;
+}
+.ht-title {
+  font-size: 12px;
+  font-weight: 800;
+  color: #0a1f44;
+  margin-top: 4px;
+}
+.ht-desc {
+  font-size: 11px;
+  color: #64748b;
+  margin-top: 2px;
+  line-height: 1.35;
 }
 .clients-hero-map-wrap {
   position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.15);
-  border-radius: 20px;
-  padding: 24px;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.35), 0 0 30px rgba(0,168,107,0.15);
+  background: transparent;
+  border: none;
+  border-radius: 0;
+  padding: 10px;
+  box-shadow: none;
 }
 .clients-map-img {
   width: 100%;
-  max-height: 380px;
+  max-height: 440px;
   object-fit: contain;
-  filter: drop-shadow(0 10px 24px rgba(0,0,0,0.4));
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
+  mix-blend-mode: multiply;
+  filter: contrast(1.06);
+}
+
+/* FLOATING MAP GLASS BADGES */
+.map-badge-float {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid #cbd5e1;
+  padding: 8px 14px;
+  border-radius: 12px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 25px rgba(10,31,68,0.12);
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #0a1f44;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+  animation: floatBadge 4s ease-in-out infinite alternate;
+}
+.map-badge-float.top-right { top: 18px; right: 18px; border-color: rgba(0, 168, 107, 0.4); }
+.map-badge-float.bottom-left { bottom: 18px; left: 18px; border-color: rgba(201, 168, 76, 0.5); animation-delay: 2s; }
+
+@keyframes floatBadge {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-6px); }
+}
+
+/* CLIENT LOGO STRIP INSIDE HERO */
+.hero-client-strip {
+  margin-top: 24px;
+  padding-top: 20px;
+  border-top: 1px solid #e2e8f0;
+}
+.hero-cs-lbl {
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: #94a3b8;
+  margin-bottom: 12px;
+}
+.hero-cs-logos {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+.hero-cs-chip {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 6px 14px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #0a1f44;
+  box-shadow: 0 2px 6px rgba(10,31,68,0.04);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s;
+}
+.hero-cs-chip:hover {
+  border-color: #00a86b;
+  color: #007a4d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0,168,107,0.15);
 }
 @media (max-width: 900px) {
   .clients-hero-grid {
@@ -102,8 +225,8 @@
 /* INDIA MAP SECTION */
 .coverage-section{padding:90px 5%;background:#f8fafc;}
 .coverage-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;}
-.map-container{position:relative;background:white;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(10,31,68,0.12);border:1px solid #e2e8f0;}
-.map-container img{width:100%;display:block;}
+.map-container{position:relative;background:transparent;border-radius:20px;overflow:hidden;box-shadow:none;border:none;}
+.map-container img{width:100%;display:block;mix-blend-mode:multiply;}
 .map-label{position:absolute;top:16px;left:16px;background:rgba(10,31,68,0.9);color:white;font-size:12px;font-weight:700;padding:6px 14px;border-radius:50px;letter-spacing:1px;}
 .states-panel{display:flex;flex-direction:column;gap:16px;}
 .state-region{background:white;border-radius:14px;border:1px solid #e2e8f0;overflow:hidden;}
@@ -114,14 +237,14 @@
 .state-tag{background:#f1f5f9;color:#334155;font-size:12px;font-weight:500;padding:4px 10px;border-radius:50px;}
 
 /* ACHIEVEMENT STRIP */
-.achievement-strip{background:linear-gradient(135deg,#060f24,#0a1f44);padding:80px 5%;}
+.achievement-strip{background:#f8fafc;padding:80px 5%;border-bottom:1px solid #e2e8f0;}
 .ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
-.ach-card{background:#0c2147 !important;border:1px solid rgba(255,255,255,0.15) !important;border-radius:18px;padding:36px 28px;text-align:center;transition:all 0.3s;}
-.ach-card:hover{background:rgba(0,168,107,0.15) !important;border-color:rgba(0,168,107,0.4) !important;}
+.ach-card{background:#ffffff !important;border:1px solid #e2e8f0 !important;border-radius:18px;padding:36px 28px;text-align:center;transition:all 0.3s;box-shadow:0 6px 20px rgba(10,31,68,0.05);}
+.ach-card:hover{transform:translateY(-5px);border-color:#00a86b !important;box-shadow:0 16px 40px rgba(0,168,107,0.12) !important;}
 .ach-icon{font-size:48px;margin-bottom:16px;}
-.ach-card h3{color:#ffffff !important;font-size:18px;font-weight:700;margin-bottom:10px;}
-.ach-card p{color:rgba(255,255,255,0.85) !important;font-size:14px;line-height:1.65;}
-.ach-num,.sn-year-lbl{font-size:clamp(36px,5vw,54px);font-weight:900;color:#00c97f !important;line-height:1;margin-bottom:6px;}
+.ach-card h3{color:#0a1f44 !important;font-size:18px;font-weight:700;margin-bottom:10px;}
+.ach-card p{color:#475569 !important;font-size:14px;line-height:1.65;}
+.ach-num,.sn-year-lbl{font-size:clamp(36px,5vw,54px);font-weight:900;color:#00a86b !important;line-height:1;margin-bottom:6px;}
 
 /* WORK ORDER CHART */
 .chart-section{padding:90px 5%;background:#f8fafc;}
@@ -173,41 +296,41 @@
 <section class="clients-hero">
   <div class="clients-hero-grid">
     <div class="clients-hero-content">
-      <div class="section-tag">PAN India Presence</div>
+      <div class="clients-hero-tag-clean">✨ PAN INDIA PRESENCE &amp; TRUSTED PARTNERSHIPS</div>
       <h1>Trusted Across <span>28+ States</span> &amp; UTs</h1>
-      <p>From petroleum giants to nuclear research agencies — our client portfolio represents India's premier public sector enterprises and corporate conglomerates, powered by a 600+ fleet and 1200+ workforce.</p>
+      <p>From petroleum giants to nuclear research agencies — our client portfolio represents India's premier public sector enterprises and corporate conglomerates.</p>
+      
+      <!-- INTEGRATED TRACK RECORD CARDS -->
+      <div class="hero-track-grid">
+        <div class="hero-track-card">
+          <div class="ht-num">400+</div>
+          <div class="ht-title">Work Orders</div>
+          <div class="ht-desc">350+ completed successfully</div>
+        </div>
+        <div class="hero-track-card">
+          <div class="ht-num">2,000+</div>
+          <div class="ht-title">Vehicles Purchased</div>
+          <div class="ht-desc">600+ active fleet</div>
+        </div>
+        <div class="hero-track-card">
+          <div class="ht-num">₹481Cr+</div>
+          <div class="ht-title">Work Order Value</div>
+          <div class="ht-desc">Combined legacy value</div>
+        </div>
+      </div>
     </div>
-    <div class="clients-hero-map-wrap">
-      <img src="images/india_coverage_map_4k.png" alt="Vajreshwari Enterprises – PAN India Coverage Map" class="clients-map-img"/>
-    </div>
-  </div>
-</section>
 
-<!-- ACHIEVEMENTS -->
-<section class="achievement-strip">
-  <div class="section-header center">
-    <div class="section-tag" style="border-color:rgba(0,168,107,0.4);">Track Record</div>
-    <h2 class="section-title" style="color:white;">Our <span>Proven</span> Performance</h2>
-    <div class="divider center"></div>
-  </div>
-  <div class="ach-grid">
-    <div class="ach-card">
-      <div class="ach-icon">📋</div>
-      <div class="ach-num">400+</div>
-      <h3>Work Orders Awarded</h3>
-      <p>Over 400 work orders awarded across both companies since inception, with 350+ successfully completed till March 2024.</p>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">🚗</div>
-      <div class="sn-year-lbl">2009</div>
-      <h3>Vehicles Purchased</h3>
-      <p>Over 2,000 vehicles purchased throughout our operational history. Currently maintaining an active fleet of 600+ vehicles.</p>
-    </div>
-    <div class="ach-card">
-      <div class="ach-icon">💰</div>
-      <div class="ach-num">₹481Cr</div>
-      <h3>Combined Work Order Value</h3>
-      <p>₹332.5 Cr from M/s RC Gupta + ₹148.5 Cr from Vajreshwari Enterprises — a combined legacy of <strong style="color:#00c97f;">₹481 Crore+.</strong></p>
+    <!-- RIGHT COLUMN: MAP WRAPPER -->
+    <div class="clients-hero-map-wrap">
+      <!-- FLOATING BADGES -->
+      <div class="map-badge-float top-right">
+        <span style="color:#00a86b;">🟢</span> Live Coverage in 28+ States
+      </div>
+      <div class="map-badge-float bottom-left">
+        <span>🏛️</span> GeM Portal Certified Vendor
+      </div>
+
+      <img src="images/india_coverage_map_4k.png" alt="Vajreshwari Enterprises – PAN India Coverage Map" class="clients-map-img"/>
     </div>
   </div>
 </section>

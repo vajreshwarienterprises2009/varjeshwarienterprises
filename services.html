@@ -10,82 +10,189 @@
 <link rel="stylesheet" href="styles.css"/>
 <link rel="stylesheet" href="animations.css"/>
 <style>
+/* WIDE CENTERED LIGHT LUXURY ENTERPRISE HERO */
 .svc-hero {
   position: relative;
   overflow: hidden;
-  background: #060f24;
-  padding: 100px 5% 45px;
-  min-height: 380px;
-  display: flex;
-  align-items: flex-end;
+  background: #f4f7fb;
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(0, 168, 107, 0.08) 0%, transparent 65%),
+    radial-gradient(circle at 50% 100%, rgba(201, 168, 76, 0.06) 0%, transparent 50%);
+  padding: 130px 5% 75px;
+  text-align: center;
+  border-bottom: 1px solid #e2e8f0;
 }
-.svc-hero-bg {
-  position: absolute;
-  inset: 0;
-  z-index: 0;
-}
-.svc-hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  filter: brightness(0.85) contrast(1.08) saturate(1.06);
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  transform: translateZ(0);
-}
-.svc-hero-overlay {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  z-index: 2;
-  padding: 30px 5% 25px;
-  background: linear-gradient(to top, rgba(6,15,36,0.90) 0%, rgba(6,15,36,0.40) 65%, transparent 100%);
-}
-.svc-hero-content {
-  max-width: 1200px;
+.svc-hero-container {
+  max-width: 1240px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
-.svc-hero-tag {
+.svc-regal-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0,201,127,0.15);
-  border: 1px solid rgba(0,201,127,0.4);
-  color: #00c97f;
-  font-size: 12px;
+  background: rgba(0, 168, 107, 0.08);
+  border: 1px solid rgba(0, 168, 107, 0.3);
+  color: #007a4d;
+  font-size: 11px;
   font-weight: 700;
-  letter-spacing: 1.5px;
+  letter-spacing: 2px;
   text-transform: uppercase;
-  padding: 6px 16px;
+  padding: 6px 22px;
   border-radius: 50px;
-  margin-bottom: 12px;
-  backdrop-filter: blur(8px);
+  margin-bottom: 22px;
 }
 .svc-hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(32px, 5vw, 52px);
+  font-size: clamp(34px, 5.2vw, 56px);
   font-weight: 800;
-  color: white;
-  line-height: 1.1;
-  margin-bottom: 14px;
+  color: #0a1f44;
+  line-height: 1.18;
+  margin-bottom: 18px;
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 .svc-hero h1 span {
-  color: #00c97f;
+  background: linear-gradient(135deg, #007a4d 0%, #00a86b 60%, #c9a84c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-.svc-hero-pills {
+.svc-gold-divider {
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 22px auto;
+  max-width: 280px;
 }
-.svc-pill {
-  background: rgba(255,255,255,0.12);
-  border: 1px solid rgba(255,255,255,0.30);
-  color: white;
-  font-size: 13px;
-  font-weight: 600;
-  padding: 8px 18px;
-  border-radius: 50px;
-  backdrop-filter: blur(8px);
+.svc-gold-divider::before, .svc-gold-divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(201, 168, 76, 0.6), transparent);
+}
+.svc-gold-divider span {
+  color: #c9a84c;
+  font-size: 10px;
+}
+.svc-hero-desc {
+  font-size: 16.5px;
+  color: #475569;
+  line-height: 1.75;
+  margin: 0 auto 36px;
+  max-width: 920px;
+}
+
+/* WIDE SERVICE ACTION CTAS */
+.svc-action-row {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 44px;
+}
+.svc-cta-btn {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  color: #0a1f44;
+  padding: 13px 24px;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(10,31,68,0.04);
+}
+.svc-cta-btn:hover {
+  background: #0a1f44;
+  border-color: #0a1f44;
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(10,31,68,0.18);
+}
+
+/* WIDE CORE ASSURANCE PILLARS BAR */
+.svc-regal-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.svc-pillar-card {
+  padding: 20px 16px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  text-align: left;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(10,31,68,0.04);
+}
+.svc-pillar-card:hover {
+  transform: translateY(-3px);
+  border-color: #00a86b;
+  box-shadow: 0 12px 30px rgba(0,168,107,0.12);
+}
+.svc-pillar-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+.svc-pillar-icon {
+  font-size: 22px;
+  line-height: 1;
+}
+.svc-pillar-title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #0a1f44;
+}
+.svc-pillar-desc {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+@media (max-width: 800px) {
+  .svc-regal-metrics { grid-template-columns: repeat(2, 1fr); gap: 1px; }
+  .svc-hero { padding: 110px 5% 55px; }
+}
+
+@media (max-width: 900px) {
+  .svc-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .svc-hero { padding: 100px 5% 50px; text-align: center; }
+  .svc-action-row { justify-content: center; }
+}
+
+@media (max-width: 768px) {
+  .svc-regal-metrics { grid-template-columns: repeat(2, 1fr); gap: 1px; }
+  .svc-hero { padding: 110px 5% 55px; }
+}
+
+@media (max-width: 768px) {
+  .svc-regal-metrics { grid-template-columns: repeat(2, 1fr); gap: 1px; }
+  .svc-hero { padding: 110px 5% 55px; }
+}
+
+@media (max-width: 900px) {
+  .flip-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
+  .flip-card { height: 180px; }
+}
+@media (max-width: 600px) {
+  .flip-grid { grid-template-columns: 1fr; }
+  .flip-card { height: 170px; }
+}
+
+@media (max-width: 900px) {
+  .svc-hero-grid { grid-template-columns: 1fr; gap: 36px; }
+  .svc-hero { padding: 100px 5% 50px; }
 }
 
 /* SERVICE CATEGORIES */
@@ -94,7 +201,7 @@
 .svc-category:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0;}
 .svc-category.reverse{direction:rtl;}
 .svc-category.reverse>*{direction:ltr;}
-.svc-cat-visual{border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#0a1f44,#1a3366);padding:40px;display:flex;flex-direction:column;gap:16px;box-shadow:0 20px 60px rgba(10,31,68,0.18);}
+.svc-cat-visual{border-radius:20px;overflow:hidden;background:linear-gradient(135deg,#007a4d,#00a86b);padding:40px;display:flex;flex-direction:column;gap:16px;box-shadow:0 20px 60px rgba(0,168,107,0.18);}
 .svc-cat-icon{font-size:56px;margin-bottom:8px;}
 .svc-cat-visual h3{color:#ffffff !important;font-family:'Playfair Display',serif;font-size:26px;font-weight:700;}
 .svc-cat-visual p{color:rgba(255,255,255,0.9) !important;font-size:15px;line-height:1.7;}
@@ -118,13 +225,13 @@
 .svc-stat .sm{font-size:13px;color:#475569;font-weight:500;text-transform:uppercase;letter-spacing:0.5px;margin-top:8px;}
 
 /* HOW IT WORKS */
-.how-section{padding:90px 5%;background:linear-gradient(135deg,#060f24,#0a1f44);}
+.how-section{padding:90px 5%;background:#f8fafc;border-top:1px solid #e2e8f0;border-bottom:1px solid #e2e8f0;}
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;position:relative;margin-top:10px;}
 .steps-grid::before{content:'';position:absolute;top:36px;left:12%;right:12%;height:2px;background:linear-gradient(90deg,#00a86b,#007a4d);z-index:0;}
 .step{text-align:center;padding:0 16px;position:relative;z-index:1;}
 .step-num{width:72px;height:72px;background:linear-gradient(135deg,#00a86b,#007a4d);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:white;margin:0 auto 20px;box-shadow:0 8px 24px rgba(0,168,107,0.35);}
-.step h4{color:white;font-size:16px;font-weight:700;margin-bottom:8px;}
-.step p{color:rgba(255,255,255,0.6);font-size:13px;line-height:1.6;}
+.step h4{color:#0a1f44;font-size:16px;font-weight:700;margin-bottom:8px;}
+.step p{color:#475569;font-size:13px;line-height:1.6;}
 
 /* COMPLIANCE */
 .compliance-section{padding:80px 5%;background:#f8fafc;}
@@ -178,19 +285,55 @@
   <div class="hamburger" onclick="this.closest('nav').classList.toggle('open')"><span></span><span></span><span></span></div>
 </nav>
 
-<!-- HERO -->
+<!-- WIDE CENTERED LIGHT LUXURY ENTERPRISE HERO -->
 <section class="svc-hero">
-  <div class="svc-hero-bg">
-    <img src="images/services_hero_4k.png" alt="Vajreshwari 4K Fleet Services Showcase" class="svc-hero-img"/>
-  </div>
-  <div class="svc-hero-overlay">
-    <div class="svc-hero-content">
-      <div class="svc-hero-tag">✨ Mobility &amp; Logistics Solutions</div>
-      <h1>Our <span>Services</span></h1>
-      <div class="svc-hero-pills">
-        <span class="svc-pill">🚌 Passenger Transport</span>
-        <span class="svc-pill">🚑 Emergency Fleet</span>
-        <span class="svc-pill">👷 Manpower Supply</span>
+  <div class="svc-hero-container">
+    <div class="svc-regal-tag">✨ ESTABLISHED 2009 — PAN-INDIA MOBILITY &amp; LOGISTICS</div>
+    <h1>Excellence in Transportation, <span>Emergency Fleets &amp; Manpower</span></h1>
+    
+    <div class="svc-gold-divider">
+      <span>◆</span>
+    </div>
+
+    <p class="svc-hero-desc">Vajreshwari Enterprises delivers integrated mobility solutions across India — managing 600+ vehicles, 24/7 emergency care dispatch, heavy goods transportation, and statutory EPF/ESI-enrolled manpower for leading government &amp; corporate clients.</p>
+
+    <!-- DIRECT SERVICE CATEGORY CTAS -->
+    <div class="svc-action-row">
+      <a href="#passenger-transport" class="svc-cta-btn">🚌 Passenger Mobility &rarr;</a>
+      <a href="#emergency-vehicles" class="svc-cta-btn">🚑 Emergency Fleet &rarr;</a>
+      <a href="#heavy-logistics" class="svc-cta-btn">🚛 Heavy Freight &rarr;</a>
+      <a href="#manpower-supply" class="svc-cta-btn">👷 Compliant Manpower &rarr;</a>
+    </div>
+
+    <!-- WIDE CORE ASSURANCE PILLARS BAR -->
+    <div class="svc-regal-metrics">
+      <div class="svc-pillar-card">
+        <div class="svc-pillar-header">
+          <span class="svc-pillar-icon">🛡️</span>
+          <span class="svc-pillar-title">EPF &amp; ESI Enrolled</span>
+        </div>
+        <div class="svc-pillar-desc">100% statutory compliant &amp; verified workforce</div>
+      </div>
+      <div class="svc-pillar-card">
+        <div class="svc-pillar-header">
+          <span class="svc-pillar-icon">🛰️</span>
+          <span class="svc-pillar-title">GPS Tracked Fleet</span>
+        </div>
+        <div class="svc-pillar-desc">Real-time route monitoring &amp; 24/7 dispatch control</div>
+      </div>
+      <div class="svc-pillar-card">
+        <div class="svc-pillar-header">
+          <span class="svc-pillar-icon">🏆</span>
+          <span class="svc-pillar-title">135+ Work Orders</span>
+        </div>
+        <div class="svc-pillar-desc">Proven execution legacy for Govt, PSUs &amp; Corporates</div>
+      </div>
+      <div class="svc-pillar-card">
+        <div class="svc-pillar-header">
+          <span class="svc-pillar-icon">📍</span>
+          <span class="svc-pillar-title">PAN-India Coverage</span>
+        </div>
+        <div class="svc-pillar-desc">Active operations &amp; rapid response across 28+ states</div>
       </div>
     </div>
   </div>
@@ -215,7 +358,7 @@
 <section class="svc-main">
 
   <!-- Passenger Transport -->
-  <div class="svc-category">
+  <div class="svc-category" id="passenger-transport">
     <div class="svc-cat-visual">
       <div class="svc-cat-icon">🚐</div>
       <h3>Passenger Transportation</h3>
@@ -254,7 +397,7 @@
   </div>
 
   <!-- Emergency Services -->
-  <div class="svc-category reverse">
+  <div class="svc-category reverse" id="emergency-vehicles">
     <div class="svc-cat-visual" style="background:linear-gradient(135deg,#e63946,#b91c2c);">
       <div class="svc-cat-icon">🚑</div>
       <h3>Emergency &amp; Heavy-Duty Vehicles</h3>
@@ -292,7 +435,7 @@
   </div>
 
   <!-- Manpower -->
-  <div class="svc-category">
+  <div class="svc-category" id="manpower-supply">
     <div class="svc-cat-visual" style="background:linear-gradient(135deg,#007a4d,#00a86b);">
       <div class="svc-cat-icon">👷</div>
       <h3>Manpower Supply Services</h3>
@@ -330,8 +473,8 @@
 <!-- HOW IT WORKS -->
 <section class="how-section">
   <div class="section-header center">
-    <div class="section-tag" style="border-color:rgba(0,168,107,0.4);">Our Process</div>
-    <h2 class="section-title" style="color:white;">How We <span>Deliver</span></h2>
+    <div class="section-tag">Our Process</div>
+    <h2 class="section-title">How We <span>Deliver</span></h2>
     <div class="divider center"></div>
   </div>
   <div class="steps-grid">
@@ -373,6 +516,13 @@
   <div class="footer-bottom"><span>&copy; 2025 Vajreshwari Enterprises. All rights reserved.</span><span>Sister Concern: M/s RC Gupta (Est. 2002) &nbsp;|&nbsp; Krady Solutions Pvt Ltd</span></div>
 </footer>
 </div>
+<script>
+document.querySelectorAll('.flip-card').forEach(card => {
+  card.addEventListener('click', () => {
+    card.classList.toggle('flipped');
+  });
+});
+</script>
 <script src="main.js"></script>
 </body>
 </html>
