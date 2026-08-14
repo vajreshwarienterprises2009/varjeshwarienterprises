@@ -22,17 +22,19 @@
 @media(max-width:768px) {
   .hero { padding-top: 70px; }
 }
-/* HD image — rendered at native resolution, no upscale blur */
+/* HD 4K Image — crystal clear high-quality rendering for 16:9 widescreen */
 .hero-img {
   display: block;
   width: 100%;
   height: auto;
+  max-height: clamp(420px, 68vh, 800px);
   object-fit: cover;
-  object-position: center;
-  image-rendering: -webkit-optimize-contrast;
-  image-rendering: crisp-edges;
-  filter: contrast(1.05) saturate(1.05) brightness(1.02);
-  transform: translateZ(0);
+  object-position: center top;
+  image-rendering: high-quality;
+  filter: contrast(1.04) saturate(1.05) brightness(1.02);
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 /* Bottom overlay — subtle gradient for buttons & stats readability */
 .hero-overlay {
