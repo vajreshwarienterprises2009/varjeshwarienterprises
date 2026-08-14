@@ -10,61 +10,207 @@
 <link rel="stylesheet" href="styles.css"/>
 <link rel="stylesheet" href="animations.css"/>
 <style>
-/* HERO — compact, image-first showcase */
-.hero {
+/* ===== REALISTIC MOVING VEHICLES HIGHWAY HERO ===== */
+.hero-highway-section {
   position: relative;
   overflow: hidden;
-  background: #0b1628;
+  background: #040a1a;
   padding: 108px 0 0 0;
   margin-top: 0;
+  display: flex;
+  flex-direction: column;
 }
-/* Add responsive navbar offset */
 @media(max-width:768px) {
-  .hero { padding-top: 70px; }
+  .hero-highway-section { padding-top: 70px; }
 }
-/* HD 4K Image — full-bleed uncropped rendering for 16:9 widescreen */
-.hero-img {
-  display: block;
+
+/* Background Stage (Skyline & Logo) */
+.hero-stage-bg {
+  position: relative;
   width: 100%;
-  height: auto;
-  object-fit: contain;
+  height: 220px;
+  overflow: hidden;
+  background: #060f24;
+}
+.hero-stage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   object-position: center top;
-  image-rendering: high-quality;
-  transform: translate3d(0, 0, 0);
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  filter: brightness(1.05) contrast(1.04);
 }
-/* Bottom overlay — subtle gradient for buttons & stats readability */
-.hero-overlay {
+
+/* Multi-Lane Highway Container */
+.highway-road-container {
+  position: relative;
+  width: 100%;
+  height: 210px;
+  background: linear-gradient(180deg, #111a2e 0%, #0a1120 50%, #152035 100%);
+  border-top: 3px solid rgba(0, 168, 107, 0.4);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  box-shadow: inset 0 0 50px rgba(0,0,0,0.8);
+}
+
+/* Lane Dividers */
+.highway-road {
   position: absolute;
-  bottom: 0; left: 0; right: 0;
-  z-index: 2;
-  padding: 24px 5% 22px;
-  background: linear-gradient(
-    to top,
-    rgba(6,15,36,0.88) 0%,
-    rgba(6,15,36,0.55) 50%,
-    transparent 100%);
+  inset: 0;
+  pointer-events: none;
 }
-/* Content inside overlay */
+.lane-line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0.4) 35px, transparent 35px, transparent 75px);
+  animation: laneMove 0.8s linear infinite;
+}
+.lane-line-top { top: 68px; }
+.lane-line-bottom { top: 138px; }
+@keyframes laneMove {
+  from { background-position: 0 0; }
+  to { background-position: -75px 0; }
+}
+
+/* Traffic Lanes */
+.traffic-lane {
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 65px;
+}
+.lane-cars-east { top: 4px; }
+.lane-buses-west { top: 72px; }
+.lane-trucks-east { top: 140px; }
+
+/* Moving Vehicle Wrapper */
+.moving-vehicle-wrap {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: transform 0.2s ease;
+}
+.moving-vehicle-wrap:hover {
+  z-index: 50;
+  transform: scale(1.12);
+}
+
+/* Vehicles Image */
+.vehicle-img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0,0,0,0.6));
+  pointer-events: auto;
+}
+.vehicle-img.flip-west {
+  transform: scaleX(-1);
+}
+
+/* Headlight Beams */
+.headlight-beam {
+  position: absolute;
+  top: 50%;
+  height: 26px;
+  width: 140px;
+  pointer-events: none;
+  transform: translateY(-50%);
+  opacity: 0.65;
+}
+.headlight-beam.east {
+  right: -130px;
+  background: linear-gradient(90deg, rgba(255,245,200,0.6) 0%, rgba(255,230,150,0.2) 50%, transparent 100%);
+  border-radius: 0 50px 50px 0;
+  clip-path: polygon(0 30%, 100% 0, 100% 100%, 0 70%);
+}
+.headlight-beam.west {
+  left: -130px;
+  background: linear-gradient(-90deg, rgba(255,245,200,0.6) 0%, rgba(255,230,150,0.2) 50%, transparent 100%);
+  border-radius: 50px 0 0 50px;
+  clip-path: polygon(100% 30%, 0 0, 0 100%, 100% 70%);
+}
+
+/* Vehicle Tooltip on Hover */
+.vehicle-tooltip {
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-6px);
+  background: rgba(6, 15, 36, 0.95);
+  border: 1px solid var(--green);
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 6px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+}
+.moving-vehicle-wrap:hover .vehicle-tooltip {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-10px);
+}
+
+/* EASTBOUND VEHICLES (Moving Left to Right) */
+.v-innova { animation: driveEast 14s linear infinite; }
+.v-scorpio { animation: driveEast 16s linear infinite; animation-delay: -5s; }
+.v-silver { animation: driveEast 15s linear infinite; animation-delay: -10s; }
+.v-white-suv { animation: driveEast 17s linear infinite; animation-delay: -2.5s; }
+
+.v-fire-truck { animation: driveEast 22s linear infinite; }
+.v-dump-truck { animation: driveEast 24s linear infinite; animation-delay: -8s; }
+.v-cargo-truck { animation: driveEast 26s linear infinite; animation-delay: -16s; }
+
+/* WESTBOUND VEHICLES (Moving Right to Left) */
+.v-volvo { animation: driveWest 18s linear infinite; }
+.v-tempo { animation: driveWest 20s linear infinite; animation-delay: -6s; }
+.v-ambulance { animation: driveWest 16s linear infinite; animation-delay: -12s; }
+.v-midbus { animation: driveWest 21s linear infinite; animation-delay: -3s; }
+
+@keyframes driveEast {
+  0% { transform: translateX(-220px); }
+  100% { transform: translateX(100vw); }
+}
+@keyframes driveWest {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-220px); }
+}
+
+/* Emergency Siren Pulsing Effect */
+.v-ambulance .vehicle-img {
+  animation: sirenFlash 0.6s ease-in-out infinite alternate;
+}
+@keyframes sirenFlash {
+  0% { filter: drop-shadow(0 0 8px rgba(230,57,70,0.9)); }
+  100% { filter: drop-shadow(0 0 14px rgba(0,168,107,0.9)); }
+}
+
+/* Bottom Overlay with Buttons & Stats */
+.hero-highway-overlay {
+  background: linear-gradient(180deg, #040a1a 0%, #060f24 100%);
+  padding: 18px 5% 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
 .hero-content {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   gap: 20px;
   flex-wrap: wrap;
 }
-.hero-btns {
-  display:flex; gap:12px; flex-wrap:wrap;
-}
-/* Both buttons transparent */
+.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
 .hero .btn-outline {
-  background: rgba(255,255,255,0.10);
-  border: 1.5px solid rgba(255,255,255,0.45);
+  background: rgba(255,255,255,0.08);
+  border: 1.5px solid rgba(255,255,255,0.35);
   color: white;
-  backdrop-filter: blur(8px);
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 700;
@@ -74,15 +220,14 @@
   display: inline-flex; align-items: center; gap: 8px;
 }
 .hero .btn-outline:hover {
-  background: rgba(255,255,255,0.22);
-  border-color: rgba(255,255,255,0.85);
+  background: rgba(255,255,255,0.20);
+  border-color: rgba(255,255,255,0.8);
   transform: translateY(-2px);
 }
 .hero .btn-primary-glass {
-  background: linear-gradient(135deg, rgba(0,168,107,0.85), rgba(0,122,77,0.90));
+  background: linear-gradient(135deg, rgba(0,168,107,0.9), rgba(0,122,77,0.95));
   border: 1.5px solid rgba(0,201,127,0.50);
   color: white;
-  backdrop-filter: blur(8px);
   padding: 12px 24px;
   border-radius: 8px;
   font-weight: 700;
@@ -97,12 +242,23 @@
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,168,107,0.45);
 }
-/* Stats bar — small, aligned right */
 .hero-stats-bar {
-  display:flex; gap:0; align-items:stretch;
-  background: rgba(255,255,255,0.07);
+  display: flex; gap: 0; align-items: stretch;
+  background: rgba(255,255,255,0.06);
   border: 1px solid rgba(255,255,255,0.12);
   border-radius: 12px;
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+.hero-stat-item {
+  padding: 10px 18px;
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,0.10);
+}
+.hero-stat-item:last-child { border-right: none; }
+.hero-stat-item .num { font-size: 18px; font-weight: 800; color: white; line-height: 1; }
+.hero-stat-item .num em { color: #00c97f; font-style: normal; }
+.hero-stat-item .lbl { font-size: 9px; color: rgba(255,255,255,0.55); text-transform: uppercase; letter-spacing: 0.8px; margin-top: 3px; }
   overflow: hidden;
   flex-shrink: 0;
   backdrop-filter: blur(8px);
@@ -336,13 +492,94 @@
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <img src="images/hero_fleet_4k.png" alt="Vajreshwari Enterprises – Complete Fleet Showcase" class="hero-img"/>
-  <div class="hero-overlay">
+<!-- HERO WITH REALISTIC MOVING VEHICLES HIGHWAY -->
+<section class="hero-highway-section">
+  <!-- Sky & City Skyline Background Stage -->
+  <div class="hero-stage-bg">
+    <img src="images/hero_highway_bg.png" alt="Vajreshwari Enterprises Skyline Stage" class="hero-stage-img"/>
+  </div>
+
+  <!-- Multi-Lane Realistic Moving Highway Road -->
+  <div class="highway-road-container">
+    <!-- Animated Road Texture & Lane Markers -->
+    <div class="highway-road">
+      <div class="lane-line lane-line-top"></div>
+      <div class="lane-line lane-line-bottom"></div>
+    </div>
+
+    <!-- LANE 1: PASSENGER & VIP CARS (Moving Left to Right) -->
+    <div class="traffic-lane lane-cars-east">
+      <div class="moving-vehicle-wrap v-innova">
+        <img src="images/vehicles/innova_crysta.png" alt="Toyota Innova Crysta" class="vehicle-img"/>
+        <div class="headlight-beam east"></div>
+        <div class="vehicle-tooltip">🚘 Toyota Innova Crysta (VIP Fleet)</div>
+      </div>
+      <div class="moving-vehicle-wrap v-scorpio">
+        <img src="images/vehicles/black_suv.png" alt="Mahindra Scorpio" class="vehicle-img"/>
+        <div class="headlight-beam east"></div>
+        <div class="vehicle-tooltip">🚙 Mahindra Scorpio (Project Fleet)</div>
+      </div>
+      <div class="moving-vehicle-wrap v-silver">
+        <img src="images/vehicles/silver_suv.png" alt="Executive SUV" class="vehicle-img"/>
+        <div class="headlight-beam east"></div>
+        <div class="vehicle-tooltip">🚗 Executive Sedan &amp; SUV</div>
+      </div>
+      <div class="moving-vehicle-wrap v-white-suv">
+        <img src="images/vehicles/white_suv.png" alt="Corporate SUV" class="vehicle-img"/>
+        <div class="headlight-beam east"></div>
+        <div class="vehicle-tooltip">🚘 Corporate Commute SUV</div>
+      </div>
+    </div>
+
+    <!-- LANE 2: PASSENGER BUSES & EMERGENCY (Moving Right to Left) -->
+    <div class="traffic-lane lane-buses-west">
+      <div class="moving-vehicle-wrap v-volvo">
+        <img src="images/vehicles/volvo_bus.png" alt="Volvo Luxury Bus" class="vehicle-img flip-west"/>
+        <div class="headlight-beam west"></div>
+        <div class="vehicle-tooltip">🚌 Volvo Luxury Tourist Coach</div>
+      </div>
+      <div class="moving-vehicle-wrap v-tempo">
+        <img src="images/vehicles/tempo_traveller.png" alt="Force Tempo Traveller" class="vehicle-img flip-west"/>
+        <div class="headlight-beam west"></div>
+        <div class="vehicle-tooltip">🚐 Tempo Traveller (12–26 Seater AC)</div>
+      </div>
+      <div class="moving-vehicle-wrap v-ambulance">
+        <img src="images/vehicles/ambulance.png" alt="ICU Ambulance" class="vehicle-img flip-west"/>
+        <div class="headlight-beam west"></div>
+        <div class="vehicle-tooltip">🚑 24/7 Industrial ICU Ambulance</div>
+      </div>
+      <div class="moving-vehicle-wrap v-midbus">
+        <img src="images/vehicles/luxury_bus.png" alt="Staff Commute Bus" class="vehicle-img flip-west"/>
+        <div class="headlight-beam west"></div>
+        <div class="vehicle-tooltip">🚎 Employee Shuttle Bus</div>
+      </div>
+    </div>
+
+    <!-- LANE 3: HEAVY GOODS & COMMERCIAL TRUCKS (Moving Left to Right) -->
+    <div class="traffic-lane lane-trucks-east">
+      <div class="moving-vehicle-wrap v-fire-truck">
+        <img src="images/vehicles/fire_truck.png" alt="Industrial Fire Fighting Truck" class="vehicle-img"/>
+        <div class="headlight-beam east"></div>
+        <div class="vehicle-tooltip">🚒 Industrial Fire Fighting Truck</div>
+      </div>
+      <div class="moving-vehicle-wrap v-dump-truck">
+        <img src="images/vehicles/dump_truck.png" alt="Heavy Goods Tipper Dump Truck" class="vehicle-img"/>
+        <div class="headlight-beam east"></div>
+        <div class="vehicle-tooltip">🚛 Heavy Tipper &amp; Machinery Freight</div>
+      </div>
+      <div class="moving-vehicle-wrap v-cargo-truck">
+        <img src="images/vehicles/cargo_truck.png" alt="Commercial Cargo Truck" class="vehicle-img"/>
+        <div class="headlight-beam east"></div>
+        <div class="vehicle-tooltip">🚚 Multi-Axle Logistics Freight</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO CONTENT OVERLAY WITH BUTTONS & STATS -->
+  <div class="hero-highway-overlay">
     <div class="hero-content">
       <div class="hero-btns">
-        <a href="services.html" class="btn btn-outline">&#9658; Explore Services</a>
+        <a href="services.html" class="btn btn-primary-glass">&#9658; Explore Services</a>
         <a href="contact.html" class="btn btn-outline">Get a Quote &rarr;</a>
       </div>
       <div class="hero-stats-bar">
