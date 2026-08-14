@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="styles.css"/>
 <link rel="stylesheet" href="animations.css"/>
 <style>
-/* HERO SHOWCASE — Expansive Full HD Showcase */
+/* HERO — Clean Full HD Showcase */
 .hero {
   position: relative;
   overflow: hidden;
@@ -18,144 +18,65 @@
   padding: 108px 0 0 0;
   margin-top: 0;
   width: 100%;
-  min-height: clamp(520px, 75vh, 850px);
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
 }
 @media(max-width:768px) {
-  .hero {
-    padding-top: 70px;
-    min-height: clamp(440px, 65vh, 600px);
-  }
+  .hero { padding-top: 70px; }
 }
 
-.hero-img-bg-wrap {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-}
-.hero-img-bg {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  filter: brightness(0.96) contrast(1.04);
-}
-.hero-img-gradient-overlay {
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to top,
-    rgba(4, 10, 26, 0.90) 0%,
-    rgba(4, 10, 26, 0.40) 35%,
-    transparent 70%
-  );
-  z-index: 2;
-}
-
-/* Floating Bottom Bar with Action Buttons & Stats Box */
-.hero-bottom-overlay {
+.hero-img-container {
   position: relative;
-  z-index: 5;
-  padding: 24px 5% 28px;
   width: 100%;
-}
-.hero-bottom-content {
-  max-width: 1280px;
-  margin: 0 auto;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-/* Hero Action Buttons (Bottom Left) */
-.hero-btns {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  align-items: center;
-}
-.btn-hero-glass {
-  background: linear-gradient(135deg, rgba(0, 168, 107, 0.92), rgba(0, 122, 77, 0.96));
-  border: 1.5px solid rgba(0, 201, 127, 0.6);
-  color: #ffffff;
-  padding: 13px 26px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 14.5px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 18px rgba(0, 168, 107, 0.35);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  backdrop-filter: blur(8px);
-}
-.btn-hero-glass:hover {
-  background: linear-gradient(135deg, rgba(0, 168, 107, 1), rgba(0, 122, 77, 1));
-  transform: translateY(-2px);
-  box-shadow: 0 8px 26px rgba(0, 168, 107, 0.5);
-}
-.btn-hero-outline {
-  background: rgba(255, 255, 255, 0.10);
-  border: 1.5px solid rgba(255, 255, 255, 0.40);
-  color: #ffffff;
-  padding: 13px 26px;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 14.5px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(10px);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-}
-.btn-hero-outline:hover {
-  background: rgba(255, 255, 255, 0.22);
-  border-color: rgba(255, 255, 255, 0.85);
-  transform: translateY(-2px);
-}
-
-/* Hero Stats Bar (Bottom Right) */
-.hero-stats-box {
-  display: flex;
-  align-items: stretch;
-  background: rgba(4, 10, 26, 0.82);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  border-radius: 12px;
+  max-width: 100%;
   overflow: hidden;
-  backdrop-filter: blur(12px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  line-height: 0;
+  display: block;
 }
-.hero-stat-cell {
-  padding: 12px 20px;
-  text-align: center;
-  border-right: 1px solid rgba(255, 255, 255, 0.10);
+
+.hero-img-hd {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain;
+  object-position: center top;
+  margin: 0 auto;
+  border: 0;
+  outline: 0;
+  image-rendering: high-quality;
+  transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
 }
-.hero-stat-cell:last-child { border-right: none; }
-.hero-stat-cell .stat-num {
-  font-size: 20px;
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1;
-  white-space: nowrap;
+
+/* Seamless Transparent Hotspot Overlay for Buttons */
+.hero-hotspots-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 5;
+  width: 100%;
+  height: 100%;
 }
-.hero-stat-cell .stat-num span {
-  color: #00c97f;
+.hero-hotspots-wrap {
+  position: absolute;
+  bottom: 4.5%;
+  left: 6.8%;
+  display: flex;
+  gap: 1.2vw;
+  pointer-events: auto;
 }
-.hero-stat-cell .stat-lbl {
-  font-size: 9.5px;
-  color: rgba(255, 255, 255, 0.60);
-  text-transform: uppercase;
-  letter-spacing: 0.9px;
-  margin-top: 4px;
-  white-space: nowrap;
+.hero-hotspot-item {
+  display: inline-block;
+  height: clamp(32px, 3.2vw, 48px);
+  width: clamp(110px, 12vw, 175px);
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+.hero-hotspot-item:hover {
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 20px rgba(0, 201, 127, 0.4);
 }
 
 /* ABOUT STRIP */
@@ -313,39 +234,12 @@
 
 <!-- HERO SHOWCASE -->
 <section class="hero">
-  <!-- Clean 4K Background Image Layer -->
-  <div class="hero-img-bg-wrap">
-    <img src="images/hero_clean_4k.png" alt="Vajreshwari Enterprises – Official Fleet Showcase" class="hero-img-bg"/>
-    <div class="hero-img-gradient-overlay"></div>
-  </div>
-
-  <!-- Bottom Floating Content Overlay -->
-  <div class="hero-bottom-overlay">
-    <div class="hero-bottom-content">
-      <!-- Action Buttons (Bottom Left) -->
-      <div class="hero-btns">
-        <a href="services.html" class="btn-hero-glass">&#9658; Explore Services</a>
-        <a href="contact.html" class="btn-hero-outline">Get a Quote &rarr;</a>
-      </div>
-
-      <!-- Stats Box (Bottom Right) -->
-      <div class="hero-stats-box">
-        <div class="hero-stat-cell">
-          <div class="stat-num">600<span>+</span></div>
-          <div class="stat-lbl">Vehicles</div>
-        </div>
-        <div class="hero-stat-cell">
-          <div class="stat-num">1200<span>+</span></div>
-          <div class="stat-lbl">Drivers</div>
-        </div>
-        <div class="hero-stat-cell">
-          <div class="stat-num">332<span>Cr</span></div>
-          <div class="stat-lbl">Work Orders</div>
-        </div>
-        <div class="hero-stat-cell">
-          <div class="stat-num">28<span>+</span></div>
-          <div class="stat-lbl">States</div>
-        </div>
+  <div class="hero-img-container">
+    <img src="images/hero_fleet_user.png" alt="Vajreshwari Enterprises – Official Fleet Showcase" class="hero-img-hd"/>
+    <div class="hero-hotspots-layer">
+      <div class="hero-hotspots-wrap">
+        <a href="services.html" class="hero-hotspot-item" title="Explore Services" aria-label="Explore Services"></a>
+        <a href="contact.html" class="hero-hotspot-item" title="Get a Quote" aria-label="Get a Quote"></a>
       </div>
     </div>
   </div>
