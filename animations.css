@@ -171,20 +171,64 @@
   box-shadow: 0 0 8px rgba(0,168,107,0.5);
 }
 
-/* ===== BACK TO TOP ===== */
-#back-top {
-  position: fixed; bottom: 28px; right: 28px; z-index: 999;
-  width: 48px; height: 48px;
-  background: linear-gradient(135deg, #00a86b, #007a4d);
-  color: white; border: none; border-radius: 14px;
-  font-size: 20px; cursor: pointer;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 6px 24px rgba(0,168,107,0.4);
-  transform: translateY(80px); opacity: 0;
-  transition: all 0.38s cubic-bezier(0.34,1.56,0.64,1);
+/* ===== FLOATING WHATSAPP BUTTON ===== */
+#whatsapp-float {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(37, 211, 102, 0.45);
+  z-index: 99999;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  text-decoration: none;
+  animation: waPulse 2.5s infinite;
 }
-#back-top.visible { transform: translateY(0); opacity: 1; }
-#back-top:hover { transform: translateY(-5px) scale(1.08); box-shadow: 0 12px 36px rgba(0,168,107,0.55); }
+#whatsapp-float:hover {
+  transform: scale(1.12);
+  box-shadow: 0 12px 32px rgba(37, 211, 102, 0.65);
+}
+#whatsapp-float .wa-tooltip {
+  position: absolute;
+  right: 70px;
+  background: #0a1f44;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 14px;
+  border-radius: 8px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+  font-family: 'Inter', sans-serif;
+}
+#whatsapp-float .wa-tooltip::after {
+  content: '';
+  position: absolute;
+  right: -6px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 6px 0 6px 6px;
+  border-style: solid;
+  border-color: transparent transparent transparent #0a1f44;
+}
+#whatsapp-float:hover .wa-tooltip {
+  opacity: 1;
+  right: 74px;
+}
+
+@keyframes waPulse {
+  0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+  70% { box-shadow: 0 0 0 16px rgba(37, 211, 102, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
 
 /* ===== SECTION TRANSITIONS ===== */
 .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.72s cubic-bezier(0.4,0,0.2,1), transform 0.72s cubic-bezier(0.4,0,0.2,1); }
