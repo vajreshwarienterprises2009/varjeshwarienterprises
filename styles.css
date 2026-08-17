@@ -188,40 +188,75 @@ nav.scrolled {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
 }
 
-/* ROW 1: FAR LEFT LOGO IMAGE & COMPANY NAME */
-.nav-logo {
-  display: flex !important;
-  align-items: center !important;
-  justify-content: flex-start !important;
-  position: relative !important;
-  text-decoration: none !important;
-  gap: 10px !important;
+/* ROW 1: FAR LEFT LOGO IMAGE & CENTERED SUB-TEXT ON PC */
+@media (min-width: 769px) {
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 12px 5% 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: rgba(6, 15, 36, 0.96);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    transition: var(--transition);
+  }
+  .nav-logo {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    margin-right: auto !important;
+    margin-left: 0 !important;
+    position: relative !important;
+    text-decoration: none !important;
+    gap: 12px !important;
+    width: auto !important;
+  }
+  .nav-logo img, .nav-logo .logo-icon {
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    mix-blend-mode: screen;
+    filter: brightness(1.2) contrast(1.1);
+    border-radius: 0 !important;
+    background: transparent !important;
+    height: 42px !important;
+    width: 42px !important;
+    flex-shrink: 0 !important;
+  }
+  .logo-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin: 0 !important;
+  }
+  .logo-name {
+    font-size: 18px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    letter-spacing: 0.6px !important;
+    line-height: 1.1 !important;
+    text-align: center !important;
+    white-space: nowrap !important;
+  }
+  .logo-sub {
+    font-size: 9.5px !important;
+    color: #00c97f !important;
+    font-weight: 700 !important;
+    letter-spacing: 2px !important;
+    text-transform: uppercase !important;
+    margin-top: 2px !important;
+    text-align: center !important;
+    width: 100% !important;
+    white-space: nowrap !important;
+  }
 }
-.nav-logo img, .nav-logo .logo-icon {
-  position: static !important;
-  transform: none !important;
-  top: auto !important;
-  left: auto !important;
-  mix-blend-mode: screen;
-  filter: brightness(1.2) contrast(1.1);
-  border-radius: 0 !important;
-  background: transparent !important;
-  height: 38px !important;
-  width: 38px !important;
-  flex-shrink: 0 !important;
-}
-.logo-icon {
-  width: 42px; height: 42px;
-  background: linear-gradient(135deg, #007a4d, #00a86b);
-  border-radius: 10px; display: flex; align-items: center; justify-content: center;
-  font-size: 15px; font-weight: 900; color: white; letter-spacing: -0.5px;
-  transition: var(--transition);
-  box-shadow: 0 4px 14px rgba(0, 168, 107, 0.4);
-}
-.nav-logo:hover .logo-icon { transform: rotate(-5deg) scale(1.08); }
-.logo-text { display: flex !important; flex-direction: column !important; text-align: left !important; margin: 0 !important; }
-.logo-name { font-size: 16.5px !important; font-weight: 800 !important; color: #ffffff !important; letter-spacing: 0.5px !important; line-height: 1.1 !important; white-space: nowrap !important; }
-.logo-sub { font-size: 9.5px !important; color: #00c97f !important; font-weight: 700 !important; letter-spacing: 1.8px !important; text-transform: uppercase !important; margin-top: 2px !important; white-space: nowrap !important; }
 
 /* ROW 2: CENTERED NAVIGATION LINKS ROW IN NEXT LINE */
 .nav-links {
@@ -636,8 +671,12 @@ img, iframe, svg, video, canvas {
 }
 
 /* Force clearance for fixed top navbar across all top heroes & sections */
-.hero, .about-hero, .svc-hero, .clients-hero, .contact-hero, .page-hero {
-  padding-top: 115px !important;
+.hero {
+  padding-top: 95px !important;
+  margin-top: 0 !important;
+}
+.about-hero, .svc-hero, .clients-hero, .contact-hero, .page-hero {
+  padding-top: 110px !important;
 }
 
 /* Mobile Hero Desktop Defaults (Hidden on Desktop) */
