@@ -633,8 +633,9 @@ img, iframe, svg, video, canvas {
   padding-top: 115px !important;
 }
 
-/* Mobile Hero Content Styling */
-.hero-mobile-content {
+/* Mobile Hero Desktop Defaults (Hidden on Desktop) */
+.hero-mobile-header,
+.hero-mobile-footer {
   display: none;
 }
 
@@ -653,7 +654,11 @@ img, iframe, svg, video, canvas {
 }
 
 @media(max-width: 768px) {
-  .hero, .about-hero, .svc-hero, .clients-hero, .contact-hero, .page-hero {
+  .hero {
+    padding: 85px 4% 30px !important;
+    background: linear-gradient(135deg, #060f24 0%, #0c2147 60%, #060f24 100%) !important;
+  }
+  .about-hero, .svc-hero, .clients-hero, .contact-hero, .page-hero {
     padding-top: 85px !important;
   }
   section { padding: 45px 5% !important; }
@@ -665,6 +670,113 @@ img, iframe, svg, video, canvas {
   .f-bottom-bar { padding: 20px 0 !important; }
   .form-row { grid-template-columns: 1fr !important; gap: 14px !important; }
   
+  /* Mobile Hero Header */
+  .hero-mobile-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    margin-bottom: 16px !important;
+  }
+  .hero-mobile-badge {
+    display: inline-block !important;
+    background: rgba(0, 168, 107, 0.15) !important;
+    border: 1px solid rgba(0, 168, 107, 0.4) !important;
+    color: #00c97f !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    padding: 4px 14px !important;
+    border-radius: 50px !important;
+    margin-bottom: 10px !important;
+  }
+  .hero-mobile-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin-bottom: 6px !important;
+    line-height: 1.2 !important;
+  }
+  .hero-mobile-desc {
+    font-size: 13.5px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.5 !important;
+    margin-bottom: 0 !important;
+    max-width: 360px !important;
+  }
+
+  /* Uncropped Image Glass Frame */
+  .hero-img-container {
+    border-radius: 16px !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    overflow: hidden !important;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45) !important;
+    margin-bottom: 16px !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+  .hero-img-hd {
+    width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    display: block !important;
+  }
+
+  /* Mobile Hero Footer: 2x2 Stats & CTAs */
+  .hero-mobile-footer {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  .hero-mobile-stats {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-bottom: 16px !important;
+  }
+  .hm-stat-card {
+    background: rgba(255, 255, 255, 0.04) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding: 12px 10px !important;
+    border-radius: 12px !important;
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+  .hms-num {
+    font-size: 19px !important;
+    font-weight: 900 !important;
+    color: #00c97f !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+  .hms-lbl {
+    font-size: 10.5px !important;
+    font-weight: 700 !important;
+    color: #cbd5e1 !important;
+    text-transform: uppercase !important;
+    margin-top: 3px !important;
+  }
+  .hero-mobile-btns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  .hero-mobile-btns .btn {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 13px 20px !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+  }
+
   /* Hide map floating badges on mobile to prevent side overflow & restore 100% clean grid alignment */
   .map-badge-float {
     display: none !important;
