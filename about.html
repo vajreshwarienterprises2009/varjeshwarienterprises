@@ -114,35 +114,115 @@
   box-sizing: border-box;
 }
 
-/* Top row cards: columns 1, 3, 5 */
+/* Sleek Creative & Minimalist Journey Styling */
+.jc-top-1 { grid-column: 1; grid-row: 1; align-self: end; }
+.jc-bottom-2 { grid-column: 2; grid-row: 3; align-self: start; }
+.jc-top-3 { grid-column: 3; grid-row: 1; align-self: end; }
+.jc-bottom-4 { grid-column: 4; grid-row: 3; align-self: start; }
+.jc-top-5 { grid-column: 5; grid-row: 1; align-self: end; }
+
 .journey-card {
   background: #ffffff;
   border-radius: 16px;
-  padding: 24px 18px;
-  box-shadow: 0 4px 24px rgba(10,31,68,0.08), 0 1px 4px rgba(10,31,68,0.04);
+  padding: 24px 20px;
+  box-shadow: 0 6px 24px rgba(10,31,68,0.06);
   border: 1px solid rgba(226,232,240,0.8);
   position: relative;
-  transition: all 0.35s cubic-bezier(0.4,0,0.2,1);
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-wrap: break-word;
   word-break: break-word;
   hyphens: auto;
-  min-height: auto;
   box-sizing: border-box;
+  overflow: hidden;
 }
+
+/* Gradient accent bar at top of each card */
+.journey-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #00a86b 0%, #0a1f44 100%);
+  transition: height 0.3s ease;
+}
+
 .journey-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(10,31,68,0.14), 0 2px 8px rgba(0,168,107,0.1);
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(10,31,68,0.1), 0 0 20px rgba(0,168,107,0.12);
   border-color: rgba(0,168,107,0.3);
 }
 
-/* Card position classes */
-.jc-top-1 { grid-column: 1; grid-row: 1; align-self: end; }
-.jc-top-3 { grid-column: 3; grid-row: 1; align-self: end; }
-.jc-top-5 { grid-column: 5; grid-row: 1; align-self: end; }
-.jc-bottom-2 { grid-column: 2; grid-row: 3; align-self: start; }
-.jc-bottom-4 { grid-column: 4; grid-row: 3; align-self: start; }
+.journey-card:hover::before {
+  height: 5px;
+  background: linear-gradient(90deg, #00a86b 0%, #00c97f 50%, #0a1f44 100%);
+}
 
-/* Card connector lines (vertical dashed) */
+/* Watermark step number in background */
+.jc-watermark {
+  position: absolute;
+  top: 8px;
+  right: 14px;
+  font-size: 38px;
+  font-weight: 900;
+  color: rgba(10,31,68,0.04);
+  line-height: 1;
+  user-select: none;
+  pointer-events: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.journey-card:hover .jc-watermark {
+  color: rgba(0,168,107,0.12);
+  transform: translateY(-2px);
+}
+
+/* Card Header Top Row */
+.jc-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+
+.journey-card .jc-date {
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #0a1f44;
+  background: #f1f5f9;
+  padding: 4px 14px;
+  border-radius: 50px;
+  border: 1px solid #e2e8f0;
+  margin-bottom: 0;
+  letter-spacing: 0.5px;
+}
+
+.journey-card .jc-title {
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #0a1f44;
+  margin-bottom: 8px;
+  line-height: 1.35;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  transition: color 0.3s ease;
+}
+
+.journey-card:hover .jc-title {
+  color: #00a86b;
+}
+
+.journey-card .jc-desc {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* Connector lines (vertical dashed) */
 .jc-top-1::after, .jc-top-3::after, .jc-top-5::after {
   content: '';
   position: absolute;
@@ -174,57 +254,6 @@
   z-index: 1;
 }
 
-/* Card date badge */
-.journey-card .jc-date {
-  display: inline-block;
-  background: linear-gradient(135deg, #00a86b, #007a4d);
-  color: white;
-  font-size: 11.5px;
-  font-weight: 700;
-  padding: 5px 13px;
-  border-radius: 50px;
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
-}
-.journey-card .jc-title {
-  font-size: 16.5px;
-  font-weight: 800;
-  color: #0a1f44;
-  margin-bottom: 10px;
-  line-height: 1.35;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-.journey-card .jc-desc {
-  font-size: 13px;
-  color: #475569;
-  line-height: 1.65;
-  margin: 0;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
-
-/* New badge */
-.jc-new-badge {
-  position: absolute;
-  top: -10px;
-  right: 16px;
-  background: linear-gradient(135deg, #e63946, #c1121f);
-  color: white;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 4px 12px;
-  border-radius: 50px;
-  box-shadow: 0 4px 12px rgba(230,57,70,0.35);
-  animation: pulse-badge 2s ease-in-out infinite;
-}
-@keyframes pulse-badge {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.08); }
-}
-
 /* Middle row: circles & connecting line */
 .journey-circles-row {
   grid-column: 1 / -1;
@@ -236,21 +265,19 @@
   padding: 0 calc(10% - 12px);
 }
 
-/* Dashed connecting line behind circles */
 .journey-circles-row::before {
   content: '';
   position: absolute;
   top: 50%;
   left: calc(10% - 12px);
   right: calc(10% - 12px);
-  height: 3px;
+  height: 2px;
   transform: translateY(-50%);
   background: repeating-linear-gradient(
     90deg,
-    #b0c4d8 0px, #b0c4d8 10px,
-    transparent 10px, transparent 18px
+    #00a86b 0px, #00a86b 8px,
+    #cbd5e1 8px, #cbd5e1 16px
   );
-  border-radius: 2px;
   z-index: 0;
 }
 
@@ -267,52 +294,39 @@
 }
 .journey-path-svg path {
   fill: none;
-  stroke: #c0d0e0;
-  stroke-width: 2.5;
-  stroke-dasharray: 10 8;
+  stroke: #cbd5e1;
+  stroke-width: 2;
+  stroke-dasharray: 8 6;
   stroke-linecap: round;
 }
 
-/* Circle nodes */
+/* Creative Timeline Circle nodes */
 .journey-circle {
-  width: 50px;
-  height: 50px;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
+  background: linear-gradient(135deg, #0a1f44 0%, #16366f 100%);
+  border: 3px solid #00a86b;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  font-weight: 900;
-  color: white;
+  font-size: 13px;
+  font-weight: 800;
+  color: #ffffff;
   position: relative;
   z-index: 2;
   flex-shrink: 0;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
-  transition: all 0.35s ease;
-}
-.journey-circle:hover {
-  transform: scale(1.15);
-}
-.journey-circle::after {
-  content: '';
-  position: absolute;
-  inset: -5px;
-  border-radius: 50%;
-  border: 2px solid currentColor;
-  opacity: 0.2;
+  box-shadow: 0 4px 14px rgba(10,31,68,0.18), 0 0 12px rgba(0,168,107,0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
 }
 
-/* Circle colors */
-.jcircle-1 { background: linear-gradient(135deg, #3b82f6, #2563eb); }
-.jcircle-1::after { border-color: #3b82f6; }
-.jcircle-2 { background: linear-gradient(135deg, #f59e0b, #d97706); }
-.jcircle-2::after { border-color: #f59e0b; }
-.jcircle-3 { background: linear-gradient(135deg, #00a86b, #007a4d); }
-.jcircle-3::after { border-color: #00a86b; }
-.jcircle-4 { background: linear-gradient(135deg, #8b5cf6, #7c3aed); }
-.jcircle-4::after { border-color: #8b5cf6; }
-.jcircle-5 { background: linear-gradient(135deg, #ef4444, #dc2626); }
-.jcircle-5::after { border-color: #ef4444; }
+.journey-circle:hover {
+  background: linear-gradient(135deg, #00a86b 0%, #007a4d 100%);
+  transform: scale(1.18);
+  box-shadow: 0 8px 22px rgba(0,168,107,0.35);
+  border-color: #ffffff;
+}
 
 /* ===== JOURNEY RESPONSIVE ===== */
 @media (max-width: 1100px) {
@@ -719,7 +733,7 @@
 <!-- OUR JOURNEY -->
 <section class="journey-section" id="our-journey">
   <div class="journey-header">
-    <div class="journey-tag">📍 Our Journey</div>
+    <div class="journey-tag">Our Journey</div>
     <h2>OUR JOURNEY: Our Road from <span>Vision to Impact</span></h2>
     <p>From a single vehicle in 2000 to ₹899 Cr+ in work orders — every milestone tells our story.</p>
   </div>
@@ -728,49 +742,59 @@
 
       <!-- TOP CARD 1 -->
       <div class="journey-card jc-top-1 reveal">
-        <div class="jc-step-num">1</div>
-        <div class="jc-date">2000 – 2008</div>
+        <div class="jc-watermark">01</div>
+        <div class="jc-card-top">
+          <span class="jc-date">2000 – 2008</span>
+        </div>
         <h3 class="jc-title">The Humble Beginning</h3>
         <p class="jc-desc">M/s RC Gupta established, executing first transport contracts. Secured initial trust with giants like NPCIL and GAIL, delivering ₹4.5+ Cr with a basic fleet.</p>
       </div>
 
       <!-- TOP CARD 3 -->
       <div class="journey-card jc-top-3 reveal">
-        <div class="jc-step-num">3</div>
-        <div class="jc-date">2015 – 2019</div>
+        <div class="jc-watermark">03</div>
+        <div class="jc-card-top">
+          <span class="jc-date">2015 – 2019</span>
+        </div>
         <h3 class="jc-title">Scaling the Fleet</h3>
         <p class="jc-desc">Diversified operations by introducing Buses and Multi-Utility Vehicles. Expanded regional footprint heavily with GAIL Gas Ltd., executing high-volume contracts worth over ₹160 Cr.</p>
       </div>
 
       <!-- TOP CARD 5 -->
       <div class="journey-card jc-top-5 reveal">
-        <div class="jc-step-num">5</div>
-        <div class="jc-date">2024 &amp; Beyond</div>
+        <div class="jc-watermark">05</div>
+        <div class="jc-card-top">
+          <span class="jc-date">2024 &amp; Beyond</span>
+        </div>
         <h3 class="jc-title">Driving Innovation</h3>
         <p class="jc-desc">Continuing the momentum with ₹207+ Cr in recent ongoing contracts. Upgrading to premium fleets (Innova Crysta, Volvo) and specialized vehicles (Ambulances), towards sustainable logistics.</p>
       </div>
 
       <!-- CIRCLES ROW -->
       <div class="journey-circles-row">
-        <div class="journey-circle jcircle-1">1</div>
-        <div class="journey-circle jcircle-2">2</div>
-        <div class="journey-circle jcircle-3">3</div>
-        <div class="journey-circle jcircle-4">4</div>
-        <div class="journey-circle jcircle-5">5</div>
+        <div class="journey-circle jcircle-1">01</div>
+        <div class="journey-circle jcircle-2">02</div>
+        <div class="journey-circle jcircle-3">03</div>
+        <div class="journey-circle jcircle-4">04</div>
+        <div class="journey-circle jcircle-5">05</div>
       </div>
 
       <!-- BOTTOM CARD 2 -->
       <div class="journey-card jc-bottom-2 reveal">
-        <div class="jc-step-num">2</div>
-        <div class="jc-date">2009 – 2014</div>
+        <div class="jc-watermark">02</div>
+        <div class="jc-card-top">
+          <span class="jc-date">2009 – 2014</span>
+        </div>
         <h3 class="jc-title">Birth of Vajreshwari</h3>
         <p class="jc-desc">Prateek Gupta &amp; Sneh Gupta officially establish Vajreshwari Enterprises. Brought prestigious clients like ISRO onboard. Upgraded fleet to Scorpios &amp; Boleros, achieving a 10x growth with ₹49.5+ Cr in contract value.</p>
       </div>
 
       <!-- BOTTOM CARD 4 -->
       <div class="journey-card jc-bottom-4 reveal">
-        <div class="jc-step-num">4</div>
-        <div class="jc-date">2020 – 2023</div>
+        <div class="jc-watermark">04</div>
+        <div class="jc-card-top">
+          <span class="jc-date">2020 – 2023</span>
+        </div>
         <h3 class="jc-title">Scale &amp; Recognition</h3>
         <p class="jc-desc">Massive deployment (e.g., 89+ vehicles for IOAGPL) and introduced HCVs &amp; Emergency Vehicles. Surpassed ₹477+ Cr in work orders and won the prestigious Best Entrepreneur Award on GEM Portal (Dec 2023).</p>
       </div>

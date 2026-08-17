@@ -59,24 +59,31 @@
 }
 .hero-hotspots-wrap {
   position: absolute;
-  bottom: 4.5%;
-  left: 6.8%;
+  bottom: 9.7%;
+  left: 9.75%;
+  width: 25.5%;
+  height: 8.2%;
   display: flex;
-  gap: 1.2vw;
+  justify-content: space-between;
+  align-items: center;
   pointer-events: auto;
+  box-sizing: border-box;
 }
 .hero-hotspot-item {
-  display: inline-block;
-  height: clamp(32px, 3.2vw, 48px);
-  width: clamp(110px, 12vw, 175px);
+  display: block;
+  width: 48.5%;
+  height: 100%;
   border-radius: 8px;
   background: transparent;
   cursor: pointer;
+  outline: none;
+  border: none;
+  text-decoration: none;
   transition: all 0.25s ease;
 }
 .hero-hotspot-item:hover {
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 0 0 20px rgba(0, 201, 127, 0.4);
+  background: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 0 16px rgba(0, 201, 127, 0.35);
 }
 
 /* ABOUT STRIP */
@@ -102,15 +109,62 @@
 .svc-link { color:#00a86b; font-size:13px; font-weight:600; text-decoration:none; letter-spacing:0.5px; display:inline-flex; align-items:center; gap:6px; }
 .svc-link:hover { gap:10px; }
 
-/* STATS SECTION */
-.stats-section { background:linear-gradient(135deg,#060f24,#0a1f44); padding:80px 5%; }
-.stats-section .section-title { color:white; }
-.stats-big-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:rgba(255,255,255,0.08); border-radius:16px; overflow:hidden; margin-top:40px; }
-.stat-big { background:rgba(255,255,255,0.03); padding:40px 30px; text-align:center; transition:all 0.3s; }
-.stat-big:hover { background:rgba(0,168,107,0.12); }
-.stat-big .num { font-size:clamp(36px,5vw,58px); font-weight:900; color:white; line-height:1; margin-bottom:8px; }
-.stat-big .num em { color:#00c97f; font-style:normal; }
-.stat-big .lbl { font-size:13px; color:rgba(255,255,255,0.55); font-weight:500; text-transform:uppercase; letter-spacing:1px; }
+/* COMPACT LIGHT BORDERLESS TRACK RECORD SECTION */
+.stats-section {
+  background: #f8fafc;
+  padding: 55px 5%;
+  border: none !important;
+}
+
+.stats-section .section-header {
+  margin-bottom: 32px;
+}
+
+.stats-big-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.stat-big {
+  background: transparent;
+  padding: 16px 12px;
+  text-align: center;
+  border: none !important;
+  box-shadow: none !important;
+  transition: transform 0.25s ease;
+}
+
+.stat-big:hover {
+  transform: translateY(-4px);
+}
+
+.stat-big .num {
+  font-size: clamp(34px, 3.8vw, 48px);
+  font-weight: 900;
+  color: #0a1f44;
+  line-height: 1.15;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+.stat-big .num em {
+  color: #00a86b;
+  font-style: normal;
+}
+
+.stat-big .lbl {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #475569;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  line-height: 1.5;
+  margin: 0;
+  word-break: break-word;
+}
 
 /* WHY US */
 .why-us { padding:90px 5%; background:#f8fafc; }
@@ -164,23 +218,68 @@
   border-radius: 50px;
 }
 
-/* AWARD BANNER */
-.award-banner { background:linear-gradient(135deg,#00a86b,#007a4d); padding:50px 5%; text-align:center; }
-.award-banner h2 { font-family:'Playfair Display',serif; font-size:clamp(22px,3.5vw,38px); color:white; font-weight:700; margin-bottom:10px; }
-.award-banner p { color:rgba(255,255,255,0.85); font-size:16px; max-width:700px; margin:0 auto 24px; }
+/* EXECUTIVE GOLDEN AWARD BANNER */
+.award-banner {
+  background: linear-gradient(135deg, #181307 0%, #2a200b 50%, #181307 100%) !important;
+  border-top: 1px solid rgba(212, 175, 55, 0.4) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.4) !important;
+  box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.1), 0 10px 30px rgba(0, 0, 0, 0.25) !important;
+  padding: 44px 5% !important;
+  text-align: center !important;
+  position: relative !important;
+}
+
+.award-banner h2 {
+  font-family: 'Playfair Display', serif !important;
+  font-size: clamp(22px, 3.2vw, 36px) !important;
+  color: #f7d070 !important;
+  font-weight: 800 !important;
+  margin-bottom: 12px !important;
+}
+
+.award-banner h2 span {
+  color: #ffe680 !important;
+}
+
+.award-banner p {
+  color: #f0e2c3 !important;
+  font-size: 15.5px !important;
+  max-width: 740px !important;
+  margin: 0 auto !important;
+  line-height: 1.7 !important;
+}
+
+.award-banner p strong {
+  color: #ffd700 !important;
+  font-weight: 800 !important;
+}
 
 /* CLIENTS STRIP */
 .clients-strip { padding:70px 5%; text-align:center; }
 .clients-logos { display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin-top:30px; }
 .client-chip { background:#f1f5f9; border:1px solid #e2e8f0; border-radius:50px; padding:10px 20px; font-size:13px; font-weight:600; color:#0a1f44; transition:all 0.3s; white-space:nowrap; }
 .client-chip:hover { background:#0a1f44; color:white; border-color:#0a1f44; transform:translateY(-2px); }
+.client-link-underline {
+  color: #00a86b;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: all 0.25s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.client-link-underline:hover {
+  color: #0a1f44;
+  gap: 8px;
+}
 
-/* CTA SECTION */
-.cta-section { background:linear-gradient(135deg,#060f24,#0a1f44); padding:90px 5%; text-align:center; position:relative; overflow:hidden; }
-.cta-section::before { content:''; position:absolute; top:-100px;right:-100px; width:400px;height:400px; background:radial-gradient(circle,rgba(0,168,107,0.12),transparent 70%); }
-.cta-section h2 { font-family:'Playfair Display',serif; font-size:clamp(28px,4.5vw,50px); color:white; margin-bottom:16px; }
-.cta-section p { color:rgba(255,255,255,0.7); font-size:17px; max-width:550px; margin:0 auto 36px; }
-.cta-btns { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+/* CTA SECTION - MINIMAL LIGHT THEME */
+.cta-section { background:#f8fafc; padding:48px 5%; text-align:center; position:relative; border-top:1px solid #e2e8f0; }
+.cta-section h2 { font-family:'Playfair Display',serif; font-size:clamp(24px,3.5vw,38px); color:#0a1f44; margin-bottom:20px; font-weight:800; }
+.cta-section h2 span { color:#00a86b; }
+.cta-btns { display:flex; justify-content:center; }
 
 @media(max-width:900px){
   .about-strip-grid,.why-grid{grid-template-columns:1fr;}
@@ -195,10 +294,9 @@
 }
 @media(max-width:640px){
   .services-grid{grid-template-columns:1fr;}
-  .stats-big-grid{grid-template-columns:1fr; gap:14px; background:transparent;}
-  .stat-big{background:#0c2147 !important; border:1px solid rgba(255,255,255,0.15) !important; border-radius:16px; padding:22px 18px;}
-  .stat-big .num{font-size:34px; color:#00c97f !important;}
-  .stat-big .lbl{font-size:12px; color:#ffffff !important; font-weight:700; letter-spacing:0.5px; line-height:1.4; word-break:break-word;}
+  .stats-big-grid{grid-template-columns:1fr; gap:16px;}
+  .stat-big{padding:24px 20px;}
+  .stats-trust-strip{border-radius:20px; flex-direction:column; text-align:center;}
   .cta-btns{flex-direction:column;align-items:center;}
   .cta-btns .btn{width:100%;justify-content:center;max-width:100%;}
   .clients-logos{gap:8px;}
@@ -250,8 +348,6 @@
   <div class="about-strip-grid">
     <img src="images/sneh_gupta_office.png" alt="Ms. Sneh Gupta – Director, Vajreshwari Enterprises" style="max-height:440px;object-fit:cover;object-position:center top;border-radius:18px;box-shadow:0 16px 45px rgba(10,31,68,0.15);"/>
     <div>
-      <div class="sister-tag">🤝 Two Sister Concern Companies</div>
-      <div class="section-tag">Company Overview</div>
       <h2 class="section-title">A Legacy of <span>Trust &amp; Excellence</span></h2>
       <div class="divider"></div>
       <p style="color:#475569;line-height:1.7;margin-bottom:10px;">Vajreshwari Enterprises (serving since 2009) and its sister concern M/s RC Gupta (serving since 2002) together form one of India's most experienced and trusted transportation conglomerates.</p>
@@ -262,7 +358,7 @@
         <li>25-member core team at HQ + 1200+ employees PAN India</li>
         <li>Krady Solutions Pvt Ltd — technology &amp; solutions arm</li>
       </ul>
-      <a href="about.html" class="btn btn-navy">Read Full Story &rarr;</a>
+      <a href="about.html" class="svc-link">Read Full Story &rarr;</a>
     </div>
   </div>
 </section>
@@ -280,37 +376,45 @@
       <div class="svc-icon">🚐</div>
       <h3>Passenger Transportation</h3>
       <p>Luxury SUVs, MUVs, sedans, Tempo Travellers, and buses for corporate travel, VIP movement, employee commute, and project site logistics.</p>
-      <a href="services.html" class="svc-link">Learn More →</a>
+      <a href="services.html" class="svc-link">Learn More &rarr;</a>
     </div>
     <div class="svc-card">
       <div class="svc-icon">🚑</div>
       <h3>Emergency &amp; Heavy-Duty</h3>
       <p>Ambulances, fire fighting trucks, nuclear waste management vehicles, and CNG Cascade MCV/LCV for critical infrastructure operations.</p>
-      <a href="services.html" class="svc-link">Learn More →</a>
+      <a href="services.html" class="svc-link">Learn More &rarr;</a>
     </div>
     <div class="svc-card">
       <div class="svc-icon">👷</div>
       <h3>Manpower Supply</h3>
       <p>Trained drivers, fire fighters, and skilled workforce with 1000+ employees enrolled in ESI and EPF. Fully compliant and reliable.</p>
-      <a href="services.html" class="svc-link">Learn More →</a>
+      <a href="services.html" class="svc-link">Learn More &rarr;</a>
     </div>
-  </div>
-  <div style="text-align:center;margin-top:40px;">
-    <a href="services.html" class="btn btn-primary">View All Services &rarr;</a>
   </div>
 </section>
 
-<!-- STATS -->
+<!-- STATS / TRACK RECORD -->
 <section class="stats-section">
   <div class="section-header center">
-    <div class="section-tag" style="border-color:rgba(0,168,107,0.4);">Our Track Record</div>
-    <h2 class="section-title" style="color:white;">Numbers That <span>Speak Volumes</span></h2>
+    <h2 class="section-title">Numbers That <span>Speak Volumes</span></h2>
   </div>
   <div class="stats-big-grid">
-    <div class="stat-big"><div class="num"><em>400</em>+</div><div class="lbl">Work Orders Awarded</div></div>
-    <div class="stat-big"><div class="num"><em>350</em>+</div><div class="lbl">Successfully Completed</div></div>
-    <div class="stat-big"><div class="num"><em>2000</em>+</div><div class="lbl">Vehicles Purchased</div></div>
-    <div class="stat-big"><div class="num"><em>481</em>Cr</div><div class="lbl">Combined Work Order Value</div></div>
+    <div class="stat-big">
+      <div class="num"><em>400</em>+</div>
+      <div class="lbl">Work Orders Awarded</div>
+    </div>
+    <div class="stat-big">
+      <div class="num"><em>350</em>+</div>
+      <div class="lbl">Successfully Completed</div>
+    </div>
+    <div class="stat-big">
+      <div class="num"><em>2,000</em>+</div>
+      <div class="lbl">Vehicles Purchased</div>
+    </div>
+    <div class="stat-big">
+      <div class="num">₹<em>481</em> Cr+</div>
+      <div class="lbl">Combined Order Value</div>
+    </div>
   </div>
 </section>
 
@@ -375,9 +479,8 @@
 
 <!-- AWARD BANNER -->
 <div class="award-banner">
-  <h2>🏆 Best Entrepreneur Award — GEM Portal, PAN India</h2>
+  <h2>🏆 Best Entrepreneur Award — <span>GEM Portal, PAN India</span></h2>
   <p>Recognized for executing the <strong>highest value of work orders</strong> in our category across GEM Portal — a testament to our commitment to excellence and delivery.</p>
-  <a href="about.html" class="btn" style="background:white;color:#007a4d;font-weight:700;">Read Our Story &rarr;</a>
 </div>
 
 <!-- CLIENTS STRIP -->
@@ -402,19 +505,16 @@
     <div class="client-chip">Nagar Nigam</div>
     <div class="client-chip">UIT</div>
   </div>
-  <div style="margin-top:36px;">
-    <a href="clients.html" class="btn btn-navy">View All Clients &amp; Coverage &rarr;</a>
+  <div style="text-align:right;margin-top:28px;max-width:1100px;margin-left:auto;margin-right:auto;">
+    <a href="clients.html" class="client-link-underline">View All Clients &amp; Coverage &rarr;</a>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta-section">
-  <div class="section-tag" style="border-color:rgba(0,168,107,0.4);">Get Started</div>
-  <h2>Ready to Partner with <span style="color:#00c97f;">India's Best?</span></h2>
-  <p>Whether you need a single vehicle or a fleet — we're here to deliver. Contact us today for a custom quote.</p>
+  <h2>Ready to Partner with <span>India's Best?</span></h2>
   <div class="cta-btns">
     <a href="contact.html" class="btn btn-primary">Contact Us Now &rarr;</a>
-    <a href="tel:+919414309990" class="btn btn-outline">📞 +91 94143 09990</a>
   </div>
 </section>
 

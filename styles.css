@@ -78,12 +78,12 @@ html, body {
 }
 
 /* Dark section & card safeguards — guarantees brilliant readable text regardless of theme/browser */
-.stats-section, .cta-section, .hero, .about-hero, .page-hero, .director-card, .map-embed, .award-banner, .achievement-strip {
+.stats-section, .cta-section, .hero, .about-hero, .page-hero, .director-card, .map-embed, .achievement-strip {
   background-color: #060f24 !important;
   background: #060f24 !important;
   color: #ffffff !important;
 }
-.stats-section *, .cta-section *, .hero *, .about-hero *, .page-hero *, .director-card *, .map-embed *, .award-banner *, .achievement-strip * {
+.stats-section *, .cta-section *, .hero *, .about-hero *, .page-hero *, .director-card *, .map-embed *, .achievement-strip * {
   forced-color-adjust: none;
 }
 .stats-section .section-title, .cta-section h2, .about-hero h1, .page-hero h1, .director-card h4, .director-card .name, .map-embed h3, .ach-card h3 {
