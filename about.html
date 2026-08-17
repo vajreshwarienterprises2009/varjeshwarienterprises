@@ -429,31 +429,15 @@
 .value-card h4{font-size:17px;font-weight:700;color:#0a1f44;margin-bottom:10px;}
 .value-card p{font-size:14px;color:#475569;line-height:1.6;}
 
-/* ===== AWARD SECTION (Split Grid & Dark Luxury Theme) ===== */
+/* ===== AWARD SECTION (Clean Corporate Light Theme) ===== */
 .award-section {
-  padding: 100px 5%;
-  background: linear-gradient(135deg, #060f24 0%, #0a1f44 50%, #0d2b3a 100%);
+  padding: 90px 5%;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
   position: relative;
   overflow: hidden;
-  color: white;
-}
-.award-section::before {
-  content: '';
-  position: absolute;
-  top: -150px; left: -150px;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(0,168,107,0.15), transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
-.award-section::after {
-  content: '';
-  position: absolute;
-  bottom: -150px; right: -150px;
-  width: 500px; height: 500px;
-  background: radial-gradient(circle, rgba(201,168,76,0.12), transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
+  color: #0a1f44;
 }
 .award-grid {
   max-width: 1200px;
@@ -469,47 +453,45 @@
   position: relative;
 }
 .award-cert-card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
   border-radius: 20px;
   padding: 16px;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.4), 0 0 30px rgba(0,168,107,0.15);
-  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 45px rgba(10,31,68,0.08);
   position: relative;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 .award-cert-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.5), 0 0 40px rgba(0,201,127,0.25);
+  box-shadow: 0 24px 60px rgba(10,31,68,0.14);
 }
 .award-cert-img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 16px rgba(10,31,68,0.08);
 }
 .award-cert-badge {
   position: absolute;
   bottom: 28px; right: 28px;
-  background: rgba(6,15,36,0.92);
-  border: 1px solid rgba(201,168,76,0.4);
-  color: #f1c40f;
+  background: #0a1f44;
+  border: 1px solid #00a86b;
+  color: #ffffff;
   font-size: 12px;
   font-weight: 700;
   padding: 8px 16px;
   border-radius: 50px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
-  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 20px rgba(10,31,68,0.2);
   display: flex; align-items: center; gap: 6px;
 }
 .award-badge-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(201,168,76,0.15);
-  border: 1px solid rgba(201,168,76,0.35);
-  color: #f39c12;
+  background: rgba(0,168,107,0.1);
+  border: 1px solid rgba(0,168,107,0.3);
+  color: #00a86b;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -522,47 +504,45 @@
   font-family: 'Playfair Display', serif;
   font-size: clamp(26px, 3.5vw, 42px);
   font-weight: 800;
-  color: white;
+  color: #0a1f44;
   line-height: 1.25;
   margin-bottom: 16px;
 }
 .award-title span {
-  color: #00c97f;
+  color: #00a86b;
 }
 .award-desc {
   font-size: 16px;
-  color: rgba(255,255,255,0.80);
+  color: #475569;
   line-height: 1.75;
   margin-bottom: 24px;
 }
 .award-highlights {
   list-style: none;
   padding: 0;
-  margin: 0 0 32px 0;
+  margin: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 .award-highlights li {
   font-size: 14.5px;
-  color: rgba(255,255,255,0.88);
+  color: #1e293b;
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 10px 16px;
-  border-radius: 10px;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  padding: 12px 18px;
+  border-radius: 12px;
+}
+.award-highlights li strong {
+  color: #0a1f44;
 }
 .award-highlights li::before {
   content: '🏆';
   font-size: 14px;
   flex-shrink: 0;
-}
-.award-cta-wrap {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
 }
 .btn-emerald {
   background: linear-gradient(135deg, #00a86b, #007a4d);
@@ -855,10 +835,6 @@
         <li><strong>Awarded By:</strong> Government e-Marketplace (GeM), Commerce Bhavan</li>
         <li><strong>Achievement:</strong> Highest work order execution &amp; 100% compliance</li>
       </ul>
-      <div class="award-cta-wrap">
-        <a href="contact.html" class="btn btn-emerald">Partner With Us &rarr;</a>
-        <a href="clients.html" class="btn btn-outline-glass">View Coverage &rarr;</a>
-      </div>
     </div>
   </div>
 </section>
