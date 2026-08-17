@@ -66,12 +66,10 @@
   background: #f8fafc;
 }
 .contact-layout {
-  display: grid;
-  grid-template-columns: 1fr 1.35fr;
-  gap: 48px;
-  max-width: 1240px;
+  display: flex;
+  justify-content: center;
+  max-width: 860px;
   margin: 0 auto;
-  align-items: start;
 }
 
 /* LEFT COLUMN: CONTACT CARDS */
@@ -403,62 +401,8 @@
 <!-- CONTACT MAIN -->
 <section class="contact-main">
   <div class="contact-layout">
-    <!-- LEFT COLUMN: DIRECT CONTACT & DIRECTOR SHOWCASE -->
-    <div class="contact-info">
-      <!-- DIRECTOR CARD -->
-      <div class="director-card-luxury">
-        <div class="director-tag">Direct Leadership Contact</div>
-        <div class="director-name">Sneh Gupta</div>
-        <div class="director-title">Director — Vajreshwari Enterprises &amp; M/s RC Gupta</div>
-        <div class="director-links">
-          <a href="tel:+919414309990" class="director-link">📞 Direct Hotline: +91 94143 09990</a>
-          <a href="mailto:Vajreshwari.enterprise@gmail.com" class="director-link">✉️ Corporate Email: Vajreshwari.enterprise@gmail.com</a>
-        </div>
-      </div>
-
-      <!-- HOTLINE INFO CARD -->
-      <div class="info-card-luxury">
-        <div class="info-icon-box">📞</div>
-        <div class="info-card-content">
-          <h4>24/7 Dispatch Control</h4>
-          <a href="tel:+919414309990">+91 94143 09990</a>
-          <p>Round-the-clock fleet emergency &amp; dispatch monitoring</p>
-        </div>
-      </div>
-
-      <!-- EMAIL INFO CARD -->
-      <div class="info-card-luxury">
-        <div class="info-icon-box">✉️</div>
-        <div class="info-card-content">
-          <h4>Official Proposals &amp; Tenders</h4>
-          <a href="mailto:Vajreshwari.enterprise@gmail.com">Vajreshwari.enterprise@gmail.com</a>
-          <p>Tender bids &amp; commercial inquiries response within 24h</p>
-        </div>
-      </div>
-
-      <!-- HEADQUARTERS INFO CARD -->
-      <div class="info-card-luxury">
-        <div class="info-icon-box">📍</div>
-        <div class="info-card-content">
-          <h4>Corporate Headquarters</h4>
-          <p>Rajasthan, India</p>
-          <p style="color:#00a86b;font-weight:700;">PAN-India Operational Network — 28+ States</p>
-        </div>
-      </div>
-
-      <!-- GEM PORTAL REGISTRATION CARD -->
-      <div class="info-card-luxury">
-        <div class="info-icon-box">🏛️</div>
-        <div class="info-card-content">
-          <h4>GeM Portal Verified Vendor</h4>
-          <p>Government e-Marketplace Registered Contractor</p>
-          <p style="color:#475569;font-size:12.5px;">Direct PSU &amp; Central Govt Order Execution</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- RIGHT COLUMN: HIGH-END INQUIRY FORM -->
-    <div class="contact-form-wrap">
+    <!-- CENTERED INQUIRY FORM -->
+    <div class="contact-form-wrap" style="width: 100%;">
       <div class="form-header-badge">📝 OFFICIAL PROPOSAL REQUEST</div>
       <h3>Send Us an Inquiry</h3>
       <p class="form-sub">Provide your project details below. Our corporate team will get back to you with a tailored technical &amp; financial proposal.</p>
