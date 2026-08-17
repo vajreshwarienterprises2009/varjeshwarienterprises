@@ -508,28 +508,22 @@
 
 <!-- MAP STRIP -->
 <section class="map-strip" style="padding: 70px 5%; background: #ffffff; text-align: center;">
-  <div class="section-tag" style="font-size: 11px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; color: #007a4d; margin-bottom: 8px;">Corporate Headquarters</div>
   <h2 class="section-title" style="font-family: 'Playfair Display', serif; font-size: clamp(28px, 4vw, 38px); font-weight: 800; color: #0a1f44; margin-bottom: 12px;">Visit <span>Our Office</span></h2>
   <div class="divider center" style="width: 60px; height: 3px; background: #00a86b; margin: 0 auto 30px;"></div>
   
-  <div style="max-width: 1100px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; overflow: hidden; box-shadow: 0 12px 40px rgba(10,31,68,0.08);">
+  <div style="max-width: 1100px; margin: 0 auto; background: #ffffff; border: 1px solid #e2e8f0; border-radius: 20px; overflow: hidden; box-shadow: 0 12px 40px rgba(10,31,68,0.08); position: relative;" onclick="this.querySelector('iframe').style.pointerEvents='auto'">
     <iframe 
       src="https://maps.google.com/maps?q=25.1645985,75.8337097&amp;z=16&amp;output=embed" 
       width="100%" 
       height="450" 
-      style="border:0; display:block;" 
+      style="border:0; display:block; pointer-events: none;" 
       allowfullscreen="" 
       loading="lazy" 
       referrerpolicy="no-referrer-when-downgrade">
     </iframe>
-    <div style="padding: 24px 30px; background: #f8fafc; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px; border-top: 1px solid #e2e8f0;">
-      <div style="text-align: left;">
-        <h4 style="margin: 0 0 4px; font-size: 17px; font-weight: 800; color: #0a1f44;">Vajreshwari Enterprises Headquarters</h4>
-        <p style="margin: 0; font-size: 14px; color: #475569;">📍 Coordinates: 25°09'52.6"N 75°50'01.4"E | Rajasthan, India (PAN India Operations)</p>
-      </div>
-      <a href="https://www.google.com/maps/place/25%C2%B009'52.6%22N+75%C2%B050'01.4%22E/@25.1645985,75.8311348,17z/data=!3m1!4b1!4m4!3m3!8m2!3d25.1645985!4d75.8337097?hl=en&amp;entry=ttu" target="_blank" rel="noopener noreferrer" style="display: inline-flex; align-items: center; gap: 8px; background: #007a4d; color: #ffffff; text-decoration: none; padding: 12px 22px; border-radius: 12px; font-weight: 700; font-size: 14px; transition: all 0.3s ease; box-shadow: 0 4px 16px rgba(0,168,107,0.25);">
-        🗺️ Open in Google Maps &rarr;
-      </a>
+    <div style="padding: 20px 30px; background: #f8fafc; text-align: center; border-top: 1px solid #e2e8f0;">
+      <h4 style="margin: 0 0 4px; font-size: 17px; font-weight: 800; color: #0a1f44;">Vajreshwari Enterprises Headquarters</h4>
+      <p style="margin: 0; font-size: 14px; color: #475569;">📍 Coordinates: 25°09'52.6"N 75°50'01.4"E | Rajasthan, India (PAN India Operations)</p>
     </div>
   </div>
 </section>
