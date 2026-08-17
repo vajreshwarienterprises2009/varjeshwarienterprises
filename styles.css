@@ -78,13 +78,20 @@ html, body {
 }
 
 /* Dark section & card safeguards — guarantees brilliant readable text regardless of theme/browser */
-.stats-section, .cta-section, .hero, .about-hero, .page-hero, .director-card, .map-embed, .achievement-strip {
+.stats-section, .cta-section, .about-hero, .page-hero, .director-card, .map-embed, .achievement-strip {
   background-color: #060f24 !important;
   background: #060f24 !important;
   color: #ffffff !important;
 }
-.stats-section *, .cta-section *, .hero *, .about-hero *, .page-hero *, .director-card *, .map-embed *, .achievement-strip * {
+.stats-section *, .cta-section *, .about-hero *, .page-hero *, .director-card *, .map-embed *, .achievement-strip * {
   forced-color-adjust: none;
+}
+
+/* Hero Section Base Theme — Clean Light Background */
+.hero {
+  background-color: #ffffff !important;
+  background: #ffffff !important;
+  color: #0a1f44 !important;
 }
 .stats-section .section-title, .cta-section h2, .about-hero h1, .page-hero h1, .director-card h4, .director-card .name, .map-embed h3, .ach-card h3 {
   color: #ffffff !important;
