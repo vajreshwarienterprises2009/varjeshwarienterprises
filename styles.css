@@ -656,7 +656,7 @@ img, iframe, svg, video, canvas {
 @media(max-width: 768px) {
   .hero {
     padding: 85px 4% 30px !important;
-    background: linear-gradient(135deg, #060f24 0%, #0c2147 60%, #060f24 100%) !important;
+    background: #ffffff !important;
   }
   .about-hero, .svc-hero, .clients-hero, .contact-hero, .page-hero {
     padding-top: 85px !important;
@@ -670,7 +670,7 @@ img, iframe, svg, video, canvas {
   .f-bottom-bar { padding: 20px 0 !important; }
   .form-row { grid-template-columns: 1fr !important; gap: 14px !important; }
   
-  /* Mobile Hero Header */
+  /* Mobile Hero Header - Clean Light Theme */
   .hero-mobile-header {
     display: flex !important;
     flex-direction: column !important;
@@ -680,14 +680,14 @@ img, iframe, svg, video, canvas {
   }
   .hero-mobile-badge {
     display: inline-block !important;
-    background: rgba(0, 168, 107, 0.15) !important;
-    border: 1px solid rgba(0, 168, 107, 0.4) !important;
-    color: #00c97f !important;
+    background: rgba(0, 168, 107, 0.08) !important;
+    border: 1px solid rgba(0, 168, 107, 0.25) !important;
+    color: #007a4d !important;
     font-size: 11px !important;
     font-weight: 800 !important;
     letter-spacing: 1.5px !important;
     text-transform: uppercase !important;
-    padding: 4px 14px !important;
+    padding: 5px 16px !important;
     border-radius: 50px !important;
     margin-bottom: 10px !important;
   }
@@ -695,27 +695,28 @@ img, iframe, svg, video, canvas {
     font-family: 'Playfair Display', serif !important;
     font-size: 26px !important;
     font-weight: 800 !important;
-    color: #ffffff !important;
+    color: #0a1f44 !important;
     margin-bottom: 6px !important;
     line-height: 1.2 !important;
   }
   .hero-mobile-desc {
     font-size: 13.5px !important;
-    color: rgba(255, 255, 255, 0.85) !important;
+    color: #475569 !important;
     line-height: 1.5 !important;
     margin-bottom: 0 !important;
     max-width: 360px !important;
   }
 
-  /* Uncropped Image Glass Frame */
+  /* Uncropped Image Clean Light Card Frame */
   .hero-img-container {
     border-radius: 16px !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid #e2e8f0 !important;
     overflow: hidden !important;
-    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.45) !important;
+    box-shadow: 0 10px 30px rgba(10, 31, 68, 0.08) !important;
     margin-bottom: 16px !important;
     width: 100% !important;
     height: auto !important;
+    background: #ffffff !important;
   }
   .hero-img-hd {
     width: 100% !important;
@@ -738,8 +739,8 @@ img, iframe, svg, video, canvas {
     margin-bottom: 16px !important;
   }
   .hm-stat-card {
-    background: rgba(255, 255, 255, 0.04) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
     padding: 12px 10px !important;
     border-radius: 12px !important;
     text-align: center !important;
@@ -747,18 +748,19 @@ img, iframe, svg, video, canvas {
     flex-direction: column !important;
     align-items: center !important;
     justify-content: center !important;
+    box-shadow: 0 2px 8px rgba(10, 31, 68, 0.03) !important;
   }
   .hms-num {
     font-size: 19px !important;
     font-weight: 900 !important;
-    color: #00c97f !important;
+    color: #00a86b !important;
     line-height: 1 !important;
     white-space: nowrap !important;
   }
   .hms-lbl {
     font-size: 10.5px !important;
     font-weight: 700 !important;
-    color: #cbd5e1 !important;
+    color: #0a1f44 !important;
     text-transform: uppercase !important;
     margin-top: 3px !important;
   }
@@ -775,6 +777,11 @@ img, iframe, svg, video, canvas {
     padding: 13px 20px !important;
     font-size: 14px !important;
     font-weight: 700 !important;
+  }
+  .hero-mobile-btns .btn-outline {
+    background: #ffffff !important;
+    border: 1.5px solid #0a1f44 !important;
+    color: #0a1f44 !important;
   }
 
   /* Hide map floating badges on mobile to prevent side overflow & restore 100% clean grid alignment */
