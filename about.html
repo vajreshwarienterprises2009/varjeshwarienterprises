@@ -429,16 +429,37 @@
 .value-card h4{font-size:17px;font-weight:700;color:#0a1f44;margin-bottom:10px;}
 .value-card p{font-size:14px;color:#475569;line-height:1.6;}
 
-/* ===== AWARD SECTION (Clean Corporate Light Theme) ===== */
+/* ===== AWARD SECTION (Rich Distinct Executive Dark Theme) ===== */
 .award-section {
-  padding: 90px 5%;
-  background: #f8fafc;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+  padding: 100px 5%;
+  background: linear-gradient(135deg, #041d1a 0%, #0a3328 50%, #071f2b 100%);
   position: relative;
   overflow: hidden;
-  color: #0a1f44;
+  color: #ffffff;
+  border-top: 3px solid #d4af37;
+  border-bottom: 3px solid #d4af37;
 }
+
+.award-section::before {
+  content: '';
+  position: absolute;
+  top: -150px; left: -150px;
+  width: 450px; height: 450px;
+  background: radial-gradient(circle, rgba(0, 201, 127, 0.15), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.award-section::after {
+  content: '';
+  position: absolute;
+  bottom: -150px; right: -150px;
+  width: 450px; height: 450px;
+  background: radial-gradient(circle, rgba(212, 175, 55, 0.12), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
 .award-grid {
   max-width: 1200px;
   margin: 0 auto;
@@ -449,49 +470,57 @@
   position: relative;
   z-index: 2;
 }
+
 .award-cert-wrap {
   position: relative;
 }
+
 .award-cert-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(212, 175, 55, 0.35);
   border-radius: 20px;
   padding: 16px;
-  box-shadow: 0 16px 45px rgba(10,31,68,0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 168, 107, 0.15);
+  backdrop-filter: blur(10px);
   position: relative;
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
+
 .award-cert-card:hover {
   transform: translateY(-6px);
-  box-shadow: 0 24px 60px rgba(10,31,68,0.14);
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 175, 55, 0.25);
 }
+
 .award-cert-img {
   width: 100%;
   height: auto;
   display: block;
   border-radius: 12px;
-  box-shadow: 0 4px 16px rgba(10,31,68,0.08);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
+
 .award-cert-badge {
   position: absolute;
   bottom: 28px; right: 28px;
-  background: #0a1f44;
-  border: 1px solid #00a86b;
-  color: #ffffff;
+  background: rgba(6, 15, 36, 0.92);
+  border: 1px solid #d4af37;
+  color: #ffd700;
   font-size: 12px;
   font-weight: 700;
   padding: 8px 16px;
   border-radius: 50px;
-  box-shadow: 0 8px 20px rgba(10,31,68,0.2);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(8px);
   display: flex; align-items: center; gap: 6px;
 }
+
 .award-badge-tag {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: rgba(0,168,107,0.1);
-  border: 1px solid rgba(0,168,107,0.3);
-  color: #00a86b;
+  background: rgba(212, 175, 55, 0.15);
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  color: #ffd700;
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1.5px;
@@ -500,23 +529,31 @@
   border-radius: 50px;
   margin-bottom: 18px;
 }
+
 .award-title {
   font-family: 'Playfair Display', serif;
   font-size: clamp(26px, 3.5vw, 42px);
   font-weight: 800;
-  color: #0a1f44;
+  color: #ffffff;
   line-height: 1.25;
   margin-bottom: 16px;
 }
+
 .award-title span {
-  color: #00a86b;
+  color: #ffd700;
 }
+
 .award-desc {
   font-size: 16px;
-  color: #475569;
+  color: rgba(255, 255, 255, 0.88);
   line-height: 1.75;
   margin-bottom: 24px;
 }
+
+.award-desc strong {
+  color: #ffffff;
+}
+
 .award-highlights {
   list-style: none;
   padding: 0;
@@ -525,20 +562,23 @@
   flex-direction: column;
   gap: 12px;
 }
+
 .award-highlights li {
   font-size: 14.5px;
-  color: #1e293b;
+  color: rgba(255, 255, 255, 0.92);
   display: flex;
   align-items: flex-start;
   gap: 10px;
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
   padding: 12px 18px;
   border-radius: 12px;
 }
+
 .award-highlights li strong {
-  color: #0a1f44;
+  color: #ffd700;
 }
+
 .award-highlights li::before {
   content: '🏆';
   font-size: 14px;
