@@ -601,7 +601,7 @@ footer.creative-footer * {
 .reveal-right { opacity: 0; transform: translateX(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal-right.visible { opacity: 1; transform: translateX(0); }
 
-/* ===== MASTER RESPONSIVE MEDIA QUERIES (NO OVERFLOW, NO CLIPPING) ===== */
+/* ===== MASTER RESPONSIVE MEDIA QUERIES (NO OVERFLOW, NO CLIPPING, NO NAVBAR OVERLAP) ===== */
 *, *::before, *::after {
   box-sizing: border-box;
   max-width: 100%;
@@ -617,11 +617,14 @@ img, iframe, svg, video, canvas {
   height: auto;
 }
 
-.table-responsive {
-  width: 100% !important;
-  overflow-x: auto !important;
-  -webkit-overflow-scrolling: touch;
-  margin-bottom: 20px;
+/* Force clearance for fixed top navbar across all top heroes & sections */
+.hero, .about-hero, .svc-hero, .clients-hero, .contact-hero, .page-hero {
+  padding-top: 115px !important;
+}
+
+/* Mobile Hero Content Styling */
+.hero-mobile-content {
+  display: none;
 }
 
 @media(max-width: 1200px) {
@@ -634,31 +637,125 @@ img, iframe, svg, video, canvas {
   .grid-2, .grid-3 { grid-template-columns: 1fr !important; }
   .grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
   .footer-grid { grid-template-columns: 1fr 1fr !important; gap: 36px !important; }
-  .stats-big-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 20px !important; }
+  .stats-big-grid, .hero-track-grid { grid-template-columns: repeat(2, 1fr) !important; gap: 16px !important; }
   .award-grid, .founder-grid { grid-template-columns: 1fr !important; gap: 40px !important; }
 }
 
 @media(max-width: 768px) {
-  section { padding: 50px 5% !important; }
-  .page-hero { padding: 90px 5% 50px !important; }
-  .page-hero h1 { font-size: clamp(26px, 6.5vw, 40px) !important; }
-  .section-title { font-size: clamp(24px, 5.5vw, 36px) !important; }
+  .hero, .about-hero, .svc-hero, .clients-hero, .contact-hero, .page-hero {
+    padding-top: 85px !important;
+  }
+  section { padding: 45px 5% !important; }
+  .page-hero h1 { font-size: clamp(24px, 6.5vw, 36px) !important; }
+  .section-title { font-size: clamp(22px, 5.5vw, 32px) !important; }
   .stats-row { flex-wrap: wrap !important; gap: 12px !important; }
-  .footer-grid { grid-template-columns: 1fr !important; gap: 32px !important; }
+  .footer-grid { grid-template-columns: 1fr !important; gap: 28px !important; }
   .f-brand-desc { max-width: 100% !important; }
   .f-bottom-bar { padding: 20px 0 !important; }
   .form-row { grid-template-columns: 1fr !important; gap: 14px !important; }
+  
+  /* Mobile Hero Block */
+  .hero-mobile-content {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+    background: #060f24 !important;
+    padding: 24px 16px 10px !important;
+    margin-top: 14px !important;
+    border-radius: 18px !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+  }
+  .hero-mobile-badge {
+    display: inline-block !important;
+    background: rgba(0, 168, 107, 0.15) !important;
+    border: 1px solid rgba(0, 168, 107, 0.4) !important;
+    color: #00c97f !important;
+    font-size: 11px !important;
+    font-weight: 800 !important;
+    letter-spacing: 1.8px !important;
+    text-transform: uppercase !important;
+    padding: 4px 14px !important;
+    border-radius: 50px !important;
+    margin-bottom: 12px !important;
+  }
+  .hero-mobile-title {
+    font-family: 'Playfair Display', serif !important;
+    font-size: 26px !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    margin-bottom: 8px !important;
+    line-height: 1.2 !important;
+  }
+  .hero-mobile-desc {
+    font-size: 14px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    line-height: 1.6 !important;
+    margin-bottom: 18px !important;
+  }
+  .hero-mobile-stats {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px !important;
+    width: 100% !important;
+    margin-bottom: 18px !important;
+  }
+  .hm-stat-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.12) !important;
+    padding: 12px 10px !important;
+    border-radius: 12px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .hms-num {
+    font-size: 19px !important;
+    font-weight: 900 !important;
+    color: #00c97f !important;
+    line-height: 1 !important;
+    white-space: nowrap !important;
+  }
+  .hms-lbl {
+    font-size: 11px !important;
+    font-weight: 700 !important;
+    color: #cbd5e1 !important;
+    text-transform: uppercase !important;
+    margin-top: 3px !important;
+  }
+  .hero-mobile-btns {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+
+  /* Map Floating Badges for Mobile */
+  .map-badge-float {
+    position: relative !important;
+    top: auto !important;
+    bottom: auto !important;
+    left: auto !important;
+    right: auto !important;
+    margin: 8px auto !important;
+    display: inline-flex !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08) !important;
+  }
 }
 
-@media(max-width: 550px) {
-  section { padding: 40px 4% !important; }
-  .grid-4, .stats-big-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
+@media(max-width: 600px) {
+  section { padding: 36px 4% !important; }
+  .grid-4, .stats-big-grid, .hero-track-grid { grid-template-columns: 1fr !important; gap: 14px !important; }
+  .stat-big, .hero-track-card { padding: 18px 16px !important; text-align: center !important; }
+  .stat-big .num, .ht-num { font-size: 28px !important; white-space: nowrap !important; }
+  .stat-big .lbl, .ht-title { font-size: 12.5px !important; }
   .btn { padding: 12px 20px !important; font-size: 14px !important; width: 100% !important; justify-content: center !important; text-align: center !important; }
-  .section-title { font-size: clamp(22px, 6vw, 30px) !important; }
-  .section-subtitle { font-size: 14px !important; }
+  .section-title { font-size: clamp(20px, 5.5vw, 26px) !important; }
+  .section-subtitle { font-size: 13.5px !important; }
   .stat-card { min-width: 100% !important; width: 100% !important; }
-  #whatsapp-float { width: 52px !important; height: 52px !important; bottom: 16px !important; right: 16px !important; }
-  #whatsapp-float svg { width: 28px !important; height: 28px !important; }
+  #whatsapp-float { width: 50px !important; height: 50px !important; bottom: 16px !important; right: 16px !important; }
+  #whatsapp-float svg { width: 26px !important; height: 26px !important; }
 }
 
 /* ===== MOVING ROAD ANIMATION ===== */
