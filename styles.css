@@ -110,18 +110,53 @@ html, body {
   line-height: 1;
   margin-bottom: 6px;
 }
-.stats-section *, .cta-section *, .hero *, .about-hero *, .page-hero *, .director-card *, .map-embed *, .award-banner * {
-  forced-color-adjust: none;
-}
-.stats-section .section-title, .cta-section h2, .about-hero h1, .page-hero h1, .director-card h4, .director-card .name, .map-embed h3 {
+/* ===== STATS SECTION (NUMBERS THAT SPEAK VOLUMES) ===== */
+.stats-section {
+  background: linear-gradient(135deg, #060f24 0%, #0c2147 50%, #060f24 100%) !important;
+  padding: 85px 5% !important;
   color: #ffffff !important;
 }
-.stats-section p, .cta-section p, .about-hero p, .page-hero p, .map-embed p {
-  color: rgba(255,255,255,0.85) !important;
+.stats-section .section-title {
+  color: #ffffff !important;
+}
+.stats-section .section-title span {
+  color: #00c97f !important;
 }
 .stat-big {
-  background: #0c2147 !important;
-  border: 1px solid rgba(255,255,255,0.15) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border-radius: 18px !important;
+  padding: 32px 20px !important;
+  text-align: center !important;
+  transition: all 0.3s ease !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25) !important;
+}
+.stat-big:hover {
+  transform: translateY(-6px) !important;
+  border-color: rgba(0, 201, 127, 0.5) !important;
+  background: rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 16px 40px rgba(0, 201, 127, 0.18) !important;
+}
+.stat-big .num {
+  font-size: clamp(34px, 4vw, 50px) !important;
+  font-weight: 900 !important;
+  color: #ffffff !important;
+  line-height: 1.1 !important;
+  margin-bottom: 10px !important;
+  white-space: nowrap !important;
+}
+.stat-big .num em {
+  color: #00c97f !important;
+  font-style: normal !important;
+}
+.stat-big .lbl {
+  font-size: 13.5px !important;
+  font-weight: 700 !important;
+  color: #cbd5e1 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  line-height: 1.5 !important;
+  margin: 0 !important;
 }
 
 /* ===== 2-TIER CENTERED EXECUTIVE NAVBAR ===== */
