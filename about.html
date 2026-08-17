@@ -1,973 +1,1331 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<meta name="color-scheme" content="light"/>
-<meta name="supported-color-schemes" content="light"/>
-<title>About Us | Vajreshwari Enterprises</title>
-<meta name="description" content="Learn about Vajreshwari Enterprises — founded in 2009, led by Sneh Gupta, with a combined ₹481 Cr+ work order legacy and PAN India presence."/>
-<link rel="stylesheet" href="styles.css"/>
-<link rel="stylesheet" href="animations.css"/>
-<style>
-.about-hero{padding:108px 0 0 0 !important;position:relative;overflow:hidden;width:100%;background:#060f24;}
-.about-hero-img{width:100%;height:auto;max-height:480px;object-fit:cover;object-position:center;display:block;}
-@media(max-width:768px){.about-hero{padding-top:70px !important;}}
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <meta name="color-scheme" content="light" />
+  <meta name="supported-color-schemes" content="light" />
+  <title>About Us | Vajreshwari Enterprises</title>
+  <meta name="description"
+    content="Learn about Vajreshwari Enterprises — founded in 2009, led by Sneh Gupta, with a combined ₹481 Cr+ work order legacy and PAN India presence." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="animations.css" />
+  <style>
+    .about-hero {
+      padding: 108px 0 0 0 !important;
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+      background: #060f24;
+    }
 
-/* FOUNDER */
-.founder-section{padding:90px 5%;background:#f8fafc;}
-.founder-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto;}
-.founder-img-wrap{position:relative;}
-.founder-img-wrap img{width:100%;border-radius:20px;box-shadow:0 20px 60px rgba(10,31,68,0.18);}
-.founder-badge{position:absolute;bottom:-16px;right:-16px;background:white;border-radius:14px;padding:14px 20px;box-shadow:0 10px 40px rgba(0,0,0,0.15);text-align:center;min-width:130px;}
-.founder-badge strong{display:block;font-size:22px;font-weight:900;color:#0a1f44;}
-.founder-badge span{font-size:11px;color:#475569;}
-.founder-content blockquote{font-size:17px;color:#475569;line-height:1.75;border-left:4px solid #00a86b;padding-left:20px;margin:20px 0 28px;font-style:italic;}
-.bio-tag{display:inline-block;background:rgba(0,168,107,0.1);color:#007a4d;font-size:12px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:50px;margin-bottom:8px;}
+    .about-hero-img {
+      width: 100%;
+      height: auto;
+      max-height: 480px;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+    }
 
-/* COMPANIES */
-.companies-section{padding:90px 5%;}
-.companies-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:28px;margin-top:10px;}
-.company-card{border-radius:20px;overflow:hidden;border:1px solid #e2e8f0;transition:all 0.3s;background:white;box-shadow:0 4px 20px rgba(10,31,68,0.06);}
-.company-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(10,31,68,0.14);border-color:rgba(0,168,107,0.3);}
-.company-card-header{background:linear-gradient(135deg,#0a1f44,#1a3366);padding:28px;color:white;}
-.company-card-header h3{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:6px;}
-.company-card-header .since{font-size:12px;color:#00c97f;font-weight:600;letter-spacing:1px;text-transform:uppercase;}
-.company-card-body{padding:24px;}
-.company-metric{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid #f1f5f9;}
-.company-metric:last-child{border-bottom:none;}
-.company-metric .label{font-size:13px;color:#475569;}
-.company-metric .value{font-size:14px;font-weight:700;color:#0a1f44;}
-.company-metric .value.green{color:#00a86b;}
+    @media(max-width:768px) {
+      .about-hero {
+        padding-top: 70px !important;
+      }
+    }
 
-/* ===== 5-BOX OUR JOURNEY TIMELINE ===== */
-.journey-section {
-  padding: 100px 5% 110px;
-  background: #f4f7fb;
-  position: relative;
-  overflow: hidden;
-}
-.journey-section::before {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(0,168,107,0.25), transparent);
-}
-.journey-header {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 70px;
-}
-.journey-header .journey-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(0,168,107,0.1);
-  border: 1px solid rgba(0,168,107,0.25);
-  color: #00a86b;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  padding: 6px 16px;
-  border-radius: 50px;
-  margin-bottom: 18px;
-}
-.journey-header h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(28px, 4vw, 46px);
-  font-weight: 800;
-  color: #0a1f44;
-  line-height: 1.2;
-  margin-bottom: 14px;
-}
-.journey-header h2 span {
-  color: #00a86b;
-}
-.journey-header p {
-  font-size: 16px;
-  color: #475569;
-  line-height: 1.75;
-  max-width: 700px;
-  margin: 0 auto;
-}
+    /* FOUNDER */
+    .founder-section {
+      padding: 90px 5%;
+      background: #f8fafc;
+    }
 
-/* Timeline container */
-.journey-timeline {
-  position: relative;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-  overflow: hidden;
-}
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 60px;
+      align-items: center;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
 
-/* The 5-column grid for cards + circles */
-.journey-grid {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: auto 80px auto;
-  gap: 0 16px;
-  position: relative;
-  align-items: end;
-  width: 100%;
-  box-sizing: border-box;
-}
+    .founder-img-wrap {
+      position: relative;
+    }
 
-/* Sleek Creative & Minimalist Journey Styling */
-.jc-top-1 { grid-column: 1; grid-row: 1; align-self: end; }
-.jc-bottom-2 { grid-column: 2; grid-row: 3; align-self: start; }
-.jc-top-3 { grid-column: 3; grid-row: 1; align-self: end; }
-.jc-bottom-4 { grid-column: 4; grid-row: 3; align-self: start; }
-.jc-top-5 { grid-column: 5; grid-row: 1; align-self: end; }
+    .founder-img-wrap img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(10, 31, 68, 0.18);
+    }
 
-.journey-card {
-  background: #ffffff;
-  border-radius: 16px;
-  padding: 24px 20px;
-  box-shadow: 0 6px 24px rgba(10,31,68,0.06);
-  border: 1px solid rgba(226,232,240,0.8);
-  position: relative;
-  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  overflow-wrap: break-word;
-  word-break: break-word;
-  hyphens: auto;
-  box-sizing: border-box;
-  overflow: hidden;
-}
+    .founder-badge {
+      position: absolute;
+      bottom: -16px;
+      right: -16px;
+      background: white;
+      border-radius: 14px;
+      padding: 14px 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      min-width: 130px;
+    }
 
-/* Gradient accent bar at top of each card */
-.journey-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, #00a86b 0%, #0a1f44 100%);
-  transition: height 0.3s ease;
-}
+    .founder-badge strong {
+      display: block;
+      font-size: 22px;
+      font-weight: 900;
+      color: #0a1f44;
+    }
 
-.journey-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 36px rgba(10,31,68,0.1), 0 0 20px rgba(0,168,107,0.12);
-  border-color: rgba(0,168,107,0.3);
-}
+    .founder-badge span {
+      font-size: 11px;
+      color: #475569;
+    }
 
-.journey-card:hover::before {
-  height: 5px;
-  background: linear-gradient(90deg, #00a86b 0%, #00c97f 50%, #0a1f44 100%);
-}
+    .founder-content blockquote {
+      font-size: 17px;
+      color: #475569;
+      line-height: 1.75;
+      border-left: 4px solid #00a86b;
+      padding-left: 20px;
+      margin: 20px 0 28px;
+      font-style: italic;
+    }
 
-/* Watermark step number in background */
-.jc-watermark {
-  position: absolute;
-  top: 8px;
-  right: 14px;
-  font-size: 38px;
-  font-weight: 900;
-  color: rgba(10,31,68,0.04);
-  line-height: 1;
-  user-select: none;
-  pointer-events: none;
-  transition: color 0.3s ease, transform 0.3s ease;
-}
+    .bio-tag {
+      display: inline-block;
+      background: rgba(0, 168, 107, 0.1);
+      color: #007a4d;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: 50px;
+      margin-bottom: 8px;
+    }
 
-.journey-card:hover .jc-watermark {
-  color: rgba(0,168,107,0.12);
-  transform: translateY(-2px);
-}
+    /* COMPANIES */
+    .companies-section {
+      padding: 90px 5%;
+    }
 
-/* Card Header Top Row */
-.jc-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-}
+    .companies-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 28px;
+      margin-top: 10px;
+    }
 
-.journey-card .jc-date {
-  font-size: 11.5px;
-  font-weight: 700;
-  color: #0a1f44;
-  background: #f1f5f9;
-  padding: 4px 14px;
-  border-radius: 50px;
-  border: 1px solid #e2e8f0;
-  margin-bottom: 0;
-  letter-spacing: 0.5px;
-}
+    .company-card {
+      border-radius: 20px;
+      overflow: hidden;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s;
+      background: white;
+      box-shadow: 0 4px 20px rgba(10, 31, 68, 0.06);
+    }
 
-.journey-card .jc-title {
-  font-size: 16.5px;
-  font-weight: 800;
-  color: #0a1f44;
-  margin-bottom: 8px;
-  line-height: 1.35;
-  overflow-wrap: break-word;
-  word-break: break-word;
-  transition: color 0.3s ease;
-}
+    .company-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(10, 31, 68, 0.14);
+      border-color: rgba(0, 168, 107, 0.3);
+    }
 
-.journey-card:hover .jc-title {
-  color: #00a86b;
-}
+    .company-card-header {
+      background: linear-gradient(135deg, #0a1f44, #1a3366);
+      padding: 28px;
+      color: white;
+    }
 
-.journey-card .jc-desc {
-  font-size: 13.5px;
-  color: #475569;
-  line-height: 1.6;
-  margin: 0;
-  overflow-wrap: break-word;
-  word-break: break-word;
-}
+    .company-card-header h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
 
-/* Connector lines (vertical dashed) */
-.jc-top-1::after, .jc-top-3::after, .jc-top-5::after {
-  content: '';
-  position: absolute;
-  bottom: -42px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 40px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #00a86b 0px, #00a86b 6px,
-    transparent 6px, transparent 12px
-  );
-  z-index: 1;
-}
-.jc-bottom-2::before, .jc-bottom-4::before {
-  content: '';
-  position: absolute;
-  top: -42px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 40px;
-  background: repeating-linear-gradient(
-    to bottom,
-    #00a86b 0px, #00a86b 6px,
-    transparent 6px, transparent 12px
-  );
-  z-index: 1;
-}
+    .company-card-header .since {
+      font-size: 12px;
+      color: #00c97f;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
 
-/* Middle row: circles & connecting line */
-.journey-circles-row {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  position: relative;
-  padding: 0 calc(10% - 12px);
-}
+    .company-card-body {
+      padding: 24px;
+    }
 
-.journey-circles-row::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  left: calc(10% - 12px);
-  right: calc(10% - 12px);
-  height: 2px;
-  transform: translateY(-50%);
-  background: repeating-linear-gradient(
-    90deg,
-    #00a86b 0px, #00a86b 8px,
-    #cbd5e1 8px, #cbd5e1 16px
-  );
-  z-index: 0;
-}
+    .company-metric {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 0;
+      border-bottom: 1px solid #f1f5f9;
+    }
 
-/* SVG curved path overlay */
-.journey-path-svg {
-  position: absolute;
-  top: 50%;
-  left: calc(10% - 12px);
-  right: calc(10% - 12px);
-  height: 60px;
-  transform: translateY(-50%);
-  z-index: 0;
-  pointer-events: none;
-}
-.journey-path-svg path {
-  fill: none;
-  stroke: #cbd5e1;
-  stroke-width: 2;
-  stroke-dasharray: 8 6;
-  stroke-linecap: round;
-}
+    .company-metric:last-child {
+      border-bottom: none;
+    }
 
-/* Creative Timeline Circle nodes */
-.journey-circle {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #0a1f44 0%, #16366f 100%);
-  border: 3px solid #00a86b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 13px;
-  font-weight: 800;
-  color: #ffffff;
-  position: relative;
-  z-index: 2;
-  flex-shrink: 0;
-  box-shadow: 0 4px 14px rgba(10,31,68,0.18), 0 0 12px rgba(0,168,107,0.25);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-}
+    .company-metric .label {
+      font-size: 13px;
+      color: #475569;
+    }
 
-.journey-circle:hover {
-  background: linear-gradient(135deg, #00a86b 0%, #007a4d 100%);
-  transform: scale(1.18);
-  box-shadow: 0 8px 22px rgba(0,168,107,0.35);
-  border-color: #ffffff;
-}
+    .company-metric .value {
+      font-size: 14px;
+      font-weight: 700;
+      color: #0a1f44;
+    }
 
-/* ===== JOURNEY RESPONSIVE ===== */
-@media (max-width: 1100px) {
-  .journey-grid {
-    gap: 0 16px;
-  }
-  .journey-card {
-    padding: 22px 18px;
-  }
-  .journey-card .jc-title {
-    font-size: 16px;
-  }
-}
+    .company-metric .value.green {
+      color: #00a86b;
+    }
 
-@media (max-width: 900px) {
-  .journey-timeline {
-    overflow: hidden;
-    padding: 0;
-    width: 100%;
-  }
-  .journey-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    position: relative;
-    padding-left: 20px;
-    box-sizing: border-box;
-    width: 100%;
-    min-width: 0;
-  }
-  .journey-grid::before {
-    content: '';
-    position: absolute;
-    left: 6px;
-    top: 10px;
-    bottom: 10px;
-    width: 3px;
-    background: linear-gradient(to bottom, #00a86b 0%, #007a4d 50%, #0a1f44 100%);
-    border-radius: 3px;
-  }
-  .journey-circles-row {
-    display: none;
-  }
-  .journey-card {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    box-sizing: border-box;
-    border-left: 4px solid #00a86b;
-    padding: 20px 18px;
-    box-shadow: 0 4px 16px rgba(10,31,68,0.06);
-  }
-  .jc-top-1 { order: 1; }
-  .jc-bottom-2 { order: 2; }
-  .jc-top-3 { order: 3; }
-  .jc-bottom-4 { order: 4; }
-  .jc-top-5 { order: 5; }
+    /* ===== 5-BOX OUR JOURNEY TIMELINE ===== */
+    .journey-section {
+      padding: 100px 5% 110px;
+      background: #f4f7fb;
+      position: relative;
+      overflow: hidden;
+    }
 
-  .jc-top-1::after, .jc-top-3::after, .jc-top-5::after,
-  .jc-bottom-2::before, .jc-bottom-4::before {
-    display: none;
-  }
+    .journey-section::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(0, 168, 107, 0.25), transparent);
+    }
 
-  .journey-card .jc-step-num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, #00a86b, #007a4d);
-    color: white;
-    font-size: 13px;
-    font-weight: 800;
-    margin-bottom: 10px;
-  }
-}
+    .journey-header {
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 70px;
+    }
 
+    .journey-header .journey-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0, 168, 107, 0.1);
+      border: 1px solid rgba(0, 168, 107, 0.25);
+      color: #00a86b;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+    }
 
+    .journey-header h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 800;
+      color: #0a1f44;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
 
-@media (max-width: 600px) {
-  .journey-section {
-    padding: 70px 5% 80px;
-  }
-  .journey-header {
-    margin-bottom: 40px;
-  }
-  .journey-card {
-    padding: 22px 20px 22px 24px;
-  }
-}
-/* VALUES */
-.values-section{padding:90px 5%;background:#f8fafc;}
+    .journey-header h2 span {
+      color: #00a86b;
+    }
 
-.values-section{padding:90px 5%;background:#f8fafc;}
-.values-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;}
-.value-card{background:white;border-radius:16px;padding:32px 24px;text-align:center;border:1px solid #e2e8f0;transition:all 0.3s;box-shadow:0 4px 16px rgba(10,31,68,0.06);}
-.value-card:hover{transform:translateY(-5px);border-color:#00a86b;box-shadow:0 16px 50px rgba(0,168,107,0.12);}
-.value-icon{font-size:40px;margin-bottom:16px;}
-.value-card h4{font-size:17px;font-weight:700;color:#0a1f44;margin-bottom:10px;}
-.value-card p{font-size:14px;color:#475569;line-height:1.6;}
+    .journey-header p {
+      font-size: 16px;
+      color: #475569;
+      line-height: 1.75;
+      max-width: 700px;
+      margin: 0 auto;
+    }
 
-/* ===== AWARD SECTION (Rich Distinct Executive Dark Theme) ===== */
-.award-section {
-  padding: 100px 5%;
-  background: linear-gradient(135deg, #041d1a 0%, #0a3328 50%, #071f2b 100%);
-  position: relative;
-  overflow: hidden;
-  color: #ffffff;
-  border-top: 3px solid #d4af37;
-  border-bottom: 3px solid #d4af37;
-}
+    /* Timeline container */
+    .journey-timeline {
+      position: relative;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      overflow: hidden;
+    }
 
-.award-section::before {
-  content: '';
-  position: absolute;
-  top: -150px; left: -150px;
-  width: 450px; height: 450px;
-  background: radial-gradient(circle, rgba(0, 201, 127, 0.15), transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
+    /* The 5-column grid for cards + circles */
+    .journey-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-rows: auto 80px auto;
+      gap: 0 16px;
+      position: relative;
+      align-items: end;
+      width: 100%;
+      box-sizing: border-box;
+    }
 
-.award-section::after {
-  content: '';
-  position: absolute;
-  bottom: -150px; right: -150px;
-  width: 450px; height: 450px;
-  background: radial-gradient(circle, rgba(212, 175, 55, 0.12), transparent 70%);
-  border-radius: 50%;
-  pointer-events: none;
-}
+    /* Sleek Creative & Minimalist Journey Styling */
+    .jc-top-1 {
+      grid-column: 1;
+      grid-row: 1;
+      align-self: end;
+    }
 
-.award-grid {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr 1.1fr;
-  gap: 50px;
-  align-items: center;
-  position: relative;
-  z-index: 2;
-}
+    .jc-bottom-2 {
+      grid-column: 2;
+      grid-row: 3;
+      align-self: start;
+    }
 
-.award-cert-wrap {
-  position: relative;
-}
+    .jc-top-3 {
+      grid-column: 3;
+      grid-row: 1;
+      align-self: end;
+    }
 
-.award-cert-card {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(212, 175, 55, 0.35);
-  border-radius: 20px;
-  padding: 16px;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 168, 107, 0.15);
-  backdrop-filter: blur(10px);
-  position: relative;
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
+    .jc-bottom-4 {
+      grid-column: 4;
+      grid-row: 3;
+      align-self: start;
+    }
 
-.award-cert-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 175, 55, 0.25);
-}
+    .jc-top-5 {
+      grid-column: 5;
+      grid-row: 1;
+      align-self: end;
+    }
 
-.award-cert-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
+    .journey-card {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 24px 20px;
+      box-shadow: 0 6px 24px rgba(10, 31, 68, 0.06);
+      border: 1px solid rgba(226, 232, 240, 0.8);
+      position: relative;
+      transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      overflow-wrap: break-word;
+      word-break: break-word;
+      hyphens: auto;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
 
-.award-cert-badge {
-  position: absolute;
-  bottom: 28px; right: 28px;
-  background: rgba(6, 15, 36, 0.92);
-  border: 1px solid #d4af37;
-  color: #ffd700;
-  font-size: 12px;
-  font-weight: 700;
-  padding: 8px 16px;
-  border-radius: 50px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  backdrop-filter: blur(8px);
-  display: flex; align-items: center; gap: 6px;
-}
+    /* Gradient accent bar at top of each card */
+    .journey-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #00a86b 0%, #0a1f44 100%);
+      transition: height 0.3s ease;
+    }
 
-.award-badge-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(212, 175, 55, 0.15);
-  border: 1px solid rgba(212, 175, 55, 0.4);
-  color: #ffd700;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  padding: 6px 16px;
-  border-radius: 50px;
-  margin-bottom: 18px;
-}
+    .journey-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 36px rgba(10, 31, 68, 0.1), 0 0 20px rgba(0, 168, 107, 0.12);
+      border-color: rgba(0, 168, 107, 0.3);
+    }
 
-.award-title {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(26px, 3.5vw, 42px);
-  font-weight: 800;
-  color: #ffffff;
-  line-height: 1.25;
-  margin-bottom: 16px;
-}
+    .journey-card:hover::before {
+      height: 5px;
+      background: linear-gradient(90deg, #00a86b 0%, #00c97f 50%, #0a1f44 100%);
+    }
 
-.award-title span {
-  color: #ffd700;
-}
+    /* Watermark step number in background */
+    .jc-watermark {
+      position: absolute;
+      top: 8px;
+      right: 14px;
+      font-size: 38px;
+      font-weight: 900;
+      color: rgba(10, 31, 68, 0.04);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+      transition: color 0.3s ease, transform 0.3s ease;
+    }
 
-.award-desc {
-  font-size: 16px;
-  color: rgba(255, 255, 255, 0.88);
-  line-height: 1.75;
-  margin-bottom: 24px;
-}
+    .journey-card:hover .jc-watermark {
+      color: rgba(0, 168, 107, 0.12);
+      transform: translateY(-2px);
+    }
 
-.award-desc strong {
-  color: #ffffff;
-}
+    /* Card Header Top Row */
+    .jc-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+    }
 
-.award-highlights {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+    .journey-card .jc-date {
+      font-size: 11.5px;
+      font-weight: 700;
+      color: #0a1f44;
+      background: #f1f5f9;
+      padding: 4px 14px;
+      border-radius: 50px;
+      border: 1px solid #e2e8f0;
+      margin-bottom: 0;
+      letter-spacing: 0.5px;
+    }
 
-.award-highlights li {
-  font-size: 14.5px;
-  color: rgba(255, 255, 255, 0.92);
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  padding: 12px 18px;
-  border-radius: 12px;
-}
+    .journey-card .jc-title {
+      font-size: 16.5px;
+      font-weight: 800;
+      color: #0a1f44;
+      margin-bottom: 8px;
+      line-height: 1.35;
+      overflow-wrap: break-word;
+      word-break: break-word;
+      transition: color 0.3s ease;
+    }
 
-.award-highlights li strong {
-  color: #ffd700;
-}
+    .journey-card:hover .jc-title {
+      color: #00a86b;
+    }
 
-.award-highlights li::before {
-  content: '🏆';
-  font-size: 14px;
-  flex-shrink: 0;
-}
-.btn-emerald {
-  background: linear-gradient(135deg, #00a86b, #007a4d);
-  color: white;
-  font-weight: 700;
-  padding: 12px 26px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s;
-  box-shadow: 0 6px 20px rgba(0,168,107,0.35);
-}
-.btn-emerald:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 10px 28px rgba(0,168,107,0.5);
-}
-.btn-outline-glass {
-  background: rgba(255,255,255,0.08);
-  border: 1.5px solid rgba(255,255,255,0.3);
-  color: white;
-  font-weight: 700;
-  padding: 12px 24px;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s;
-  backdrop-filter: blur(6px);
-}
-.btn-outline-glass:hover {
-  background: rgba(255,255,255,0.18);
-  border-color: rgba(255,255,255,0.7);
-  transform: translateY(-2px);
-}
-@media (max-width: 900px) {
-  .award-grid {
-    grid-template-columns: 1fr;
-    gap: 36px;
-  }
-}
+    .journey-card .jc-desc {
+      font-size: 13.5px;
+      color: #475569;
+      line-height: 1.6;
+      margin: 0;
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    /* Connector lines (vertical dashed) */
+    .jc-top-1::after,
+    .jc-top-3::after,
+    .jc-top-5::after {
+      content: '';
+      position: absolute;
+      bottom: -42px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 40px;
+      background: repeating-linear-gradient(to bottom,
+          #00a86b 0px, #00a86b 6px,
+          transparent 6px, transparent 12px);
+      z-index: 1;
+    }
+
+    .jc-bottom-2::before,
+    .jc-bottom-4::before {
+      content: '';
+      position: absolute;
+      top: -42px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 40px;
+      background: repeating-linear-gradient(to bottom,
+          #00a86b 0px, #00a86b 6px,
+          transparent 6px, transparent 12px);
+      z-index: 1;
+    }
+
+    /* Middle row: circles & connecting line */
+    .journey-circles-row {
+      grid-column: 1 / -1;
+      grid-row: 2;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+      padding: 0 calc(10% - 12px);
+    }
+
+    .journey-circles-row::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: calc(10% - 12px);
+      right: calc(10% - 12px);
+      height: 2px;
+      transform: translateY(-50%);
+      background: repeating-linear-gradient(90deg,
+          #00a86b 0px, #00a86b 8px,
+          #cbd5e1 8px, #cbd5e1 16px);
+      z-index: 0;
+    }
+
+    /* SVG curved path overlay */
+    .journey-path-svg {
+      position: absolute;
+      top: 50%;
+      left: calc(10% - 12px);
+      right: calc(10% - 12px);
+      height: 60px;
+      transform: translateY(-50%);
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    .journey-path-svg path {
+      fill: none;
+      stroke: #cbd5e1;
+      stroke-width: 2;
+      stroke-dasharray: 8 6;
+      stroke-linecap: round;
+    }
+
+    /* Creative Timeline Circle nodes */
+    .journey-circle {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #0a1f44 0%, #16366f 100%);
+      border: 3px solid #00a86b;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 800;
+      color: #ffffff;
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(10, 31, 68, 0.18), 0 0 12px rgba(0, 168, 107, 0.25);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+    }
+
+    .journey-circle:hover {
+      background: linear-gradient(135deg, #00a86b 0%, #007a4d 100%);
+      transform: scale(1.18);
+      box-shadow: 0 8px 22px rgba(0, 168, 107, 0.35);
+      border-color: #ffffff;
+    }
+
+    /* ===== JOURNEY RESPONSIVE ===== */
+    @media (max-width: 1100px) {
+      .journey-grid {
+        gap: 0 16px;
+      }
+
+      .journey-card {
+        padding: 22px 18px;
+      }
+
+      .journey-card .jc-title {
+        font-size: 16px;
+      }
+    }
+
+    @media (max-width: 900px) {
+      .journey-timeline {
+        overflow: hidden;
+        padding: 0;
+        width: 100%;
+      }
+
+      .journey-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        position: relative;
+        padding-left: 20px;
+        box-sizing: border-box;
+        width: 100%;
+        min-width: 0;
+      }
+
+      .journey-grid::before {
+        content: '';
+        position: absolute;
+        left: 6px;
+        top: 10px;
+        bottom: 10px;
+        width: 3px;
+        background: linear-gradient(to bottom, #00a86b 0%, #007a4d 50%, #0a1f44 100%);
+        border-radius: 3px;
+      }
+
+      .journey-circles-row {
+        display: none;
+      }
+
+      .journey-card {
+        width: 100%;
+        max-width: 100%;
+        margin: 0;
+        box-sizing: border-box;
+        border-left: 4px solid #00a86b;
+        padding: 20px 18px;
+        box-shadow: 0 4px 16px rgba(10, 31, 68, 0.06);
+      }
+
+      .jc-top-1 {
+        order: 1;
+      }
+
+      .jc-bottom-2 {
+        order: 2;
+      }
+
+      .jc-top-3 {
+        order: 3;
+      }
+
+      .jc-bottom-4 {
+        order: 4;
+      }
+
+      .jc-top-5 {
+        order: 5;
+      }
+
+      .jc-top-1::after,
+      .jc-top-3::after,
+      .jc-top-5::after,
+      .jc-bottom-2::before,
+      .jc-bottom-4::before {
+        display: none;
+      }
+
+      .journey-card .jc-step-num {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #00a86b, #007a4d);
+        color: white;
+        font-size: 13px;
+        font-weight: 800;
+        margin-bottom: 10px;
+      }
+    }
 
 
 
-/* ===== RESPONSIVE ===== */
-@media(max-width:1024px){
-  .founder-grid{grid-template-columns:1fr;max-width:600px;}
-  .companies-grid{grid-template-columns:1fr;max-width:600px;margin:0 auto;}
-  .values-grid{grid-template-columns:1fr 1fr;}
-  /* Road: hide SVG, show stacked */
-  .journey-road-wrap{display:none;}
-  .journey-mobile{display:flex;}
-}
-@media(max-width:900px){
-  .founder-grid,.companies-grid{grid-template-columns:1fr;}
-  .values-grid{grid-template-columns:1fr 1fr;}
-}
-@media(max-width:600px){
-  .values-grid{grid-template-columns:1fr;}
-  .founder-badge{right:0;bottom:-20px;}
-  .about-hero{padding:100px 5% 60px;}
-  .about-hero h1{font-size:clamp(28px,8vw,42px);}
-  .companies-grid{grid-template-columns:1fr;}
-  .award-section{padding:60px 5%;}
-}
-</style>
+    @media (max-width: 600px) {
+      .journey-section {
+        padding: 70px 5% 80px;
+      }
+
+      .journey-header {
+        margin-bottom: 40px;
+      }
+
+      .journey-card {
+        padding: 22px 20px 22px 24px;
+      }
+    }
+
+    /* VALUES */
+    .values-section {
+      padding: 90px 5%;
+      background: #f8fafc;
+    }
+
+    .values-section {
+      padding: 90px 5%;
+      background: #f8fafc;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 24px;
+    }
+
+    .value-card {
+      background: white;
+      border-radius: 16px;
+      padding: 32px 24px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+      transition: all 0.3s;
+      box-shadow: 0 4px 16px rgba(10, 31, 68, 0.06);
+    }
+
+    .value-card:hover {
+      transform: translateY(-5px);
+      border-color: #00a86b;
+      box-shadow: 0 16px 50px rgba(0, 168, 107, 0.12);
+    }
+
+    .value-icon {
+      font-size: 40px;
+      margin-bottom: 16px;
+    }
+
+    .value-card h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: #0a1f44;
+      margin-bottom: 10px;
+    }
+
+    .value-card p {
+      font-size: 14px;
+      color: #475569;
+      line-height: 1.6;
+    }
+
+    /* ===== AWARD SECTION (Rich Distinct Executive Dark Theme) ===== */
+    .award-section {
+      padding: 100px 5%;
+      background: linear-gradient(135deg, #041d1a 0%, #0a3328 50%, #071f2b 100%);
+      position: relative;
+      overflow: hidden;
+      color: #ffffff;
+      border-top: 3px solid #d4af37;
+      border-bottom: 3px solid #d4af37;
+    }
+
+    .award-section::before {
+      content: '';
+      position: absolute;
+      top: -150px;
+      left: -150px;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(0, 201, 127, 0.15), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .award-section::after {
+      content: '';
+      position: absolute;
+      bottom: -150px;
+      right: -150px;
+      width: 450px;
+      height: 450px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12), transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .award-grid {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 50px;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+
+    .award-cert-wrap {
+      position: relative;
+    }
+
+    .award-cert-card {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(212, 175, 55, 0.35);
+      border-radius: 20px;
+      padding: 16px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 168, 107, 0.15);
+      backdrop-filter: blur(10px);
+      position: relative;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .award-cert-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 40px rgba(212, 175, 55, 0.25);
+    }
+
+    .award-cert-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .award-cert-badge {
+      position: absolute;
+      bottom: 28px;
+      right: 28px;
+      background: rgba(6, 15, 36, 0.92);
+      border: 1px solid #d4af37;
+      color: #ffd700;
+      font-size: 12px;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 50px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(8px);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .award-badge-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(212, 175, 55, 0.15);
+      border: 1px solid rgba(212, 175, 55, 0.4);
+      color: #ffd700;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 18px;
+    }
+
+    .award-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 3.5vw, 42px);
+      font-weight: 800;
+      color: #ffffff;
+      line-height: 1.25;
+      margin-bottom: 16px;
+    }
+
+    .award-title span {
+      color: #ffd700;
+    }
+
+    .award-desc {
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.88);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+
+    .award-desc strong {
+      color: #ffffff;
+    }
+
+    .award-highlights {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .award-highlights li {
+      font-size: 14.5px;
+      color: rgba(255, 255, 255, 0.92);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 12px 18px;
+      border-radius: 12px;
+    }
+
+    .award-highlights li strong {
+      color: #ffd700;
+    }
+
+    .award-highlights li::before {
+      content: '🏆';
+      font-size: 14px;
+      flex-shrink: 0;
+    }
+
+    .btn-emerald {
+      background: linear-gradient(135deg, #00a86b, #007a4d);
+      color: white;
+      font-weight: 700;
+      padding: 12px 26px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s;
+      box-shadow: 0 6px 20px rgba(0, 168, 107, 0.35);
+    }
+
+    .btn-emerald:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0, 168, 107, 0.5);
+    }
+
+    .btn-outline-glass {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1.5px solid rgba(255, 255, 255, 0.3);
+      color: white;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.3s;
+      backdrop-filter: blur(6px);
+    }
+
+    .btn-outline-glass:hover {
+      background: rgba(255, 255, 255, 0.18);
+      border-color: rgba(255, 255, 255, 0.7);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 900px) {
+      .award-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+    }
+
+
+
+    /* ===== RESPONSIVE ===== */
+    @media(max-width:1024px) {
+      .founder-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+      }
+
+      .companies-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      /* Road: hide SVG, show stacked */
+      .journey-road-wrap {
+        display: none;
+      }
+
+      .journey-mobile {
+        display: flex;
+      }
+    }
+
+    @media(max-width:900px) {
+
+      .founder-grid,
+      .companies-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media(max-width:600px) {
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-badge {
+        right: 0;
+        bottom: -20px;
+      }
+
+      .about-hero {
+        padding: 100px 5% 60px;
+      }
+
+      .about-hero h1 {
+        font-size: clamp(28px, 8vw, 42px);
+      }
+
+      .companies-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .award-section {
+        padding: 60px 5%;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<div id="scroll-progress"></div>
-<a href="https://wa.me/919414568241?text=Hello%20Vajreshwari%20Enterprises%2C%20I%20would%20like%20to%20inquire%20about%20your%20services." target="_blank" rel="noopener noreferrer" id="whatsapp-float">
-  <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.597A9.873 9.873 0 0 0 11.39 2.686c-5.464 0-9.91 4.444-9.912 9.91 0 1.747.457 3.453 1.325 4.957L1.44 22.56l5.176-1.357a9.852 9.852 0 0 0 4.77 1.226h.004c5.462 0 9.908-4.446 9.91-9.911 0-2.645-1.03-5.132-2.897-6.992zm-7.013 15.187h-.003a8.212 8.212 0 0 1-4.187-1.144l-.3-.178-3.11.816.83-3.032-.196-.312a8.196 8.196 0 0 1-1.258-4.382c.002-4.526 3.684-8.208 8.212-8.208 2.191 0 4.252.854 5.801 2.404a8.156 8.156 0 0 1 2.402 5.803c-.002 4.528-3.684 8.21-8.21 8.21zm4.5-6.149c-.247-.124-1.463-.722-1.69-.804-.227-.083-.392-.124-.557.124-.165.247-.64.804-.784.97-.144.164-.288.185-.535.061-.247-.124-1.043-.385-1.987-1.226-.734-.655-1.23-1.465-1.374-1.712-.144-.247-.015-.38.109-.504.111-.11.247-.288.371-.432.124-.144.165-.247.247-.412.083-.165.042-.309-.02-.432-.062-.124-.557-1.34-.763-1.835-.201-.484-.406-.418-.557-.426-.144-.008-.309-.009-.474-.009s-.433.062-.659.309c-.227.247-.866.845-.866 2.062 0 1.216.886 2.391 1.01 2.556.124.165 1.744 2.663 4.226 3.734.59.255 1.051.407 1.411.521.593.188 1.132.161 1.558.097.475-.071 1.463-.598 1.669-1.175.206-.577.206-1.072.144-1.175-.062-.103-.227-.165-.474-.288z" fill="#FFFFFF"/>
-  </svg>
-</a>
-<div class="page-wrapper">
-<nav id="navbar">
-  <a href="index.html" class="nav-logo">
-    <img src="images/ve_logo.png" alt="VE Logo" style="height:42px;width:42px;object-fit:contain;border-radius:6px;"/>
-    <div class="logo-text">
-      <span class="logo-name">Vajreshwari Enterprises</span>
-      <span class="logo-sub">Serving Since 2009</span>
-    </div>
+  <div id="scroll-progress"></div>
+  <a href="https://wa.me/919414568241?text=Hello%20Vajreshwari%20Enterprises%2C%20I%20would%20like%20to%20inquire%20about%20your%20services."
+    target="_blank" rel="noopener noreferrer" id="whatsapp-float">
+    <svg width="34" height="34" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M18.403 5.597A9.873 9.873 0 0 0 11.39 2.686c-5.464 0-9.91 4.444-9.912 9.91 0 1.747.457 3.453 1.325 4.957L1.44 22.56l5.176-1.357a9.852 9.852 0 0 0 4.77 1.226h.004c5.462 0 9.908-4.446 9.91-9.911 0-2.645-1.03-5.132-2.897-6.992zm-7.013 15.187h-.003a8.212 8.212 0 0 1-4.187-1.144l-.3-.178-3.11.816.83-3.032-.196-.312a8.196 8.196 0 0 1-1.258-4.382c.002-4.526 3.684-8.208 8.212-8.208 2.191 0 4.252.854 5.801 2.404a8.156 8.156 0 0 1 2.402 5.803c-.002 4.528-3.684 8.21-8.21 8.21zm4.5-6.149c-.247-.124-1.463-.722-1.69-.804-.227-.083-.392-.124-.557.124-.165.247-.64.804-.784.97-.144.164-.288.185-.535.061-.247-.124-1.043-.385-1.987-1.226-.734-.655-1.23-1.465-1.374-1.712-.144-.247-.015-.38.109-.504.111-.11.247-.288.371-.432.124-.144.165-.247.247-.412.083-.165.042-.309-.02-.432-.062-.124-.557-1.34-.763-1.835-.201-.484-.406-.418-.557-.426-.144-.008-.309-.009-.474-.009s-.433.062-.659.309c-.227.247-.866.845-.866 2.062 0 1.216.886 2.391 1.01 2.556.124.165 1.744 2.663 4.226 3.734.59.255 1.051.407 1.411.521.593.188 1.132.161 1.558.097.475-.071 1.463-.598 1.669-1.175.206-.577.206-1.072.144-1.175-.062-.103-.227-.165-.474-.288z"
+        fill="#FFFFFF" />
+    </svg>
   </a>
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="about.html" class="active">About Us</a></li>
-    <li><a href="services.html">Services</a></li>
-    <li><a href="clients.html">Clients &amp; Coverage</a></li>
-    <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
-  </ul>
-  <div class="hamburger" onclick="this.closest('nav').classList.toggle('open')"><span></span><span></span><span></span></div>
-</nav>
-
-<!-- HERO -->
-<section class="about-hero">
-  <img src="images/about_hero_banner.png" alt="Vajreshwari Enterprises - Serving Since 2009" class="about-hero-img"/>
-</section>
-
-<!-- FOUNDER -->
-<section class="founder-section">
-  <div class="founder-grid">
-    <div class="founder-img-wrap">
-      <img src="images/director_award.jpg" alt="Sneh Gupta — Director, Vajreshwari Enterprises — Best Entrepreneur Award 2023" style="object-fit:cover;object-position:center top;max-height:460px;border-radius:20px;"/>
-      <div class="founder-badge">
-        <strong>2009</strong>
-        <span>Founded Year</span>
-      </div>
-    </div>
-    <div class="founder-content">
-      <div class="bio-tag">Leadership</div>
-      <div class="section-tag">Meet Our Director</div>
-      <h2 class="section-title">Sneh Gupta — <span>Visionary Leader</span></h2>
-      <div class="divider"></div>
-      <blockquote>"A visionary with big dreams, determined to redefine transportation and logistics across India."</blockquote>
-      <p style="color:#475569;line-height:1.75;margin-bottom:16px;">An alumnus of <strong style="color:#0a1f44;">NMIMS, Mumbai</strong>, Ms. Sneh Gupta began her career with Avanse Financial Services, gaining deep operational expertise in finance. Armed with that discipline, he pivoted to entrepreneurship — building Vajreshwari Enterprises from the ground up.</p>
-      <p style="color:#475569;line-height:1.75;margin-bottom:24px;">Today, she leads <strong style="color:#0a1f44;">3 companies</strong> — Vajreshwari Enterprises, M/s RC Gupta, and Krady Solutions Pvt Ltd — with a <strong style="color:#0a1f44;">core team of 25</strong> at headquarters and over <strong style="color:#e63946;">1,200+ employees across PAN India.</strong></p>
-      <div class="stats-row">
-        <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Companies Led</div></div>
-        <div class="stat-card"><div class="stat-number">25<span>+</span></div><div class="stat-label">Core Team (HQ)</div></div>
-        <div class="stat-card"><div class="stat-number">1200<span>+</span></div><div class="stat-label">PAN India Employees</div></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- COMPANIES -->
-<section class="companies-section">
-  <div class="section-header center">
-    <div class="section-tag">Our Group</div>
-    <h2 class="section-title">Three Companies, <span>One Vision</span></h2>
-    <div class="divider center"></div>
-    <p class="section-subtitle">Together forming one of India's most comprehensive transportation and logistics groups.</p>
-  </div>
-  <div class="companies-grid">
-    <div class="company-card">
-      <div class="company-card-header">
-        <h3>Vajreshwari Enterprises</h3>
-        <div class="since">▸ Serving Since 2009</div>
-      </div>
-      <div class="company-card-body">
-        <div class="company-metric"><span class="label">Work Orders Awarded</span><span class="value green">135+</span></div>
-        <div class="company-metric"><span class="label">Vehicles Deployed</span><span class="value green">200+</span></div>
-        <div class="company-metric"><span class="label">Drivers Employed</span><span class="value">400+</span></div>
-        <div class="company-metric"><span class="label">ESI + EPF Enrolled</span><span class="value">370+</span></div>
-        <div class="company-metric"><span class="label">Total Work Order Value</span><span class="value green">₹148.5 Cr+</span></div>
-      </div>
-    </div>
-    <div class="company-card">
-      <div class="company-card-header" style="background:linear-gradient(135deg,#007a4d,#00a86b);">
-        <h3>M/s RC Gupta</h3>
-        <div class="since">▸ Serving Since 2002</div>
-      </div>
-      <div class="company-card-body">
-        <div class="company-metric"><span class="label">Work Orders Awarded</span><span class="value green">120+</span></div>
-        <div class="company-metric"><span class="label">Vehicles Deployed</span><span class="value green">350+</span></div>
-        <div class="company-metric"><span class="label">Drivers Employed</span><span class="value">700+</span></div>
-        <div class="company-metric"><span class="label">ESI + EPF Enrolled</span><span class="value">700+</span></div>
-        <div class="company-metric"><span class="label">Total Work Order Value</span><span class="value green">₹332.5 Cr+</span></div>
-      </div>
-    </div>
-    <div class="company-card">
-      <div class="company-card-header" style="background:linear-gradient(135deg,#1a3366,#2a4d8c);">
-        <h3>Krady Solutions Pvt Ltd</h3>
-        <div class="since">▸ Technology &amp; Solutions Arm</div>
-      </div>
-      <div class="company-card-body">
-        <div class="company-metric"><span class="label">Sector</span><span class="value">Technology</span></div>
-        <div class="company-metric"><span class="label">Role</span><span class="value">Digital Solutions</span></div>
-        <div class="company-metric"><span class="label">Focus</span><span class="value">Innovation</span></div>
-        <div class="company-metric"><span class="label">Integration</span><span class="value">Group Operations</span></div>
-        <div class="company-metric"><span class="label">Status</span><span class="value green">Active</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- OUR JOURNEY -->
-<section class="journey-section" id="our-journey">
-  <div class="journey-header">
-    <div class="journey-tag">Our Journey</div>
-    <h2>OUR JOURNEY: Our Road from <span>Vision to Impact</span></h2>
-    <p>From a single vehicle in 2000 to ₹899 Cr+ in work orders — every milestone tells our story.</p>
-  </div>
-  <div class="journey-timeline">
-    <div class="journey-grid">
-
-      <!-- TOP CARD 1 -->
-      <div class="journey-card jc-top-1 reveal">
-        <div class="jc-watermark">01</div>
-        <div class="jc-card-top">
-          <span class="jc-date">2000 – 2008</span>
+  <div class="page-wrapper">
+    <nav id="navbar">
+      <a href="index.html" class="nav-logo">
+        <img src="images/ve_logo.png" alt="VE Logo"
+          style="height:42px;width:42px;object-fit:contain;border-radius:6px;" />
+        <div class="logo-text">
+          <span class="logo-name">Vajreshwari Enterprises</span>
+          <span class="logo-sub">Serving Since 2009</span>
         </div>
-        <h3 class="jc-title">The Humble Beginning</h3>
-        <p class="jc-desc">M/s RC Gupta established, executing first transport contracts. Secured initial trust with giants like NPCIL and GAIL, delivering ₹4.5+ Cr with a basic fleet.</p>
-      </div>
-
-      <!-- TOP CARD 3 -->
-      <div class="journey-card jc-top-3 reveal">
-        <div class="jc-watermark">03</div>
-        <div class="jc-card-top">
-          <span class="jc-date">2015 – 2019</span>
-        </div>
-        <h3 class="jc-title">Scaling the Fleet</h3>
-        <p class="jc-desc">Diversified operations by introducing Buses and Multi-Utility Vehicles. Expanded regional footprint heavily with GAIL Gas Ltd., executing high-volume contracts worth over ₹160 Cr.</p>
-      </div>
-
-      <!-- TOP CARD 5 -->
-      <div class="journey-card jc-top-5 reveal">
-        <div class="jc-watermark">05</div>
-        <div class="jc-card-top">
-          <span class="jc-date">2024 &amp; Beyond</span>
-        </div>
-        <h3 class="jc-title">Driving Innovation</h3>
-        <p class="jc-desc">Continuing the momentum with ₹207+ Cr in recent ongoing contracts. Upgrading to premium fleets (Innova Crysta, Volvo) and specialized vehicles (Ambulances), towards sustainable logistics.</p>
-      </div>
-
-      <!-- CIRCLES ROW -->
-      <div class="journey-circles-row">
-        <div class="journey-circle jcircle-1">01</div>
-        <div class="journey-circle jcircle-2">02</div>
-        <div class="journey-circle jcircle-3">03</div>
-        <div class="journey-circle jcircle-4">04</div>
-        <div class="journey-circle jcircle-5">05</div>
-      </div>
-
-      <!-- BOTTOM CARD 2 -->
-      <div class="journey-card jc-bottom-2 reveal">
-        <div class="jc-watermark">02</div>
-        <div class="jc-card-top">
-          <span class="jc-date">2009 – 2014</span>
-        </div>
-        <h3 class="jc-title">Birth of Vajreshwari</h3>
-        <p class="jc-desc">Prateek Gupta &amp; Sneh Gupta officially establish Vajreshwari Enterprises. Brought prestigious clients like ISRO onboard. Upgraded fleet to Scorpios &amp; Boleros, achieving a 10x growth with ₹49.5+ Cr in contract value.</p>
-      </div>
-
-      <!-- BOTTOM CARD 4 -->
-      <div class="journey-card jc-bottom-4 reveal">
-        <div class="jc-watermark">04</div>
-        <div class="jc-card-top">
-          <span class="jc-date">2020 – 2023</span>
-        </div>
-        <h3 class="jc-title">Scale &amp; Recognition</h3>
-        <p class="jc-desc">Massive deployment (e.g., 89+ vehicles for IOAGPL) and introduced HCVs &amp; Emergency Vehicles. Surpassed ₹477+ Cr in work orders and won the prestigious Best Entrepreneur Award on GEM Portal (Dec 2023).</p>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- VALUES -->
-<section class="values-section">
-  <div class="section-header center">
-    <div class="section-tag">Our Values</div>
-    <h2 class="section-title">What <span>Drives</span> Us</h2>
-    <div class="divider center"></div>
-  </div>
-  <div class="values-grid">
-    <div class="value-card">
-      <div class="value-icon">🎯</div>
-      <h4>Reliability</h4>
-      <p>Every vehicle delivered on time, every driver fully compliant. Our clients trust us because we never compromise on commitment.</p>
-    </div>
-    <div class="value-card">
-      <div class="value-icon">🛡️</div>
-      <h4>Safety First</h4>
-      <p>All vehicles insured, all drivers ESI & EPF enrolled. Safety is not an option — it's our non-negotiable standard.</p>
-    </div>
-    <div class="value-card">
-      <div class="value-icon">🌏</div>
-      <h4>National Reach</h4>
-      <p>With presence across 28+ states, we bring local expertise and pan-India scale to every project we undertake.</p>
-    </div>
-    <div class="value-card">
-      <div class="value-icon">💡</div>
-      <h4>Innovation</h4>
-      <p>Through Krady Solutions, we continuously embrace technology to improve fleet management and service quality.</p>
-    </div>
-  </div>
-</section>
-
-<!-- AWARD SECTION -->
-<section class="award-section" id="award-section">
-  <div class="award-grid">
-    <div class="award-cert-wrap">
-      <div class="award-cert-card">
-        <img src="images/gem_award_certificate.jpg" alt="Vajreshwari Enterprises – GeM Portal Top Sellers (Women Entrepreneurs) Certificate 2023" class="award-cert-img"/>
-        <div class="award-cert-badge">
-          <span>🏅</span> Official GeM Certificate 2023
-        </div>
-      </div>
-    </div>
-    <div class="award-content">
-      <div class="award-badge-tag">🏆 National Recognition</div>
-      <h2 class="award-title">Best Entrepreneur Award — <span>GEM Portal, PAN India</span></h2>
-      <div class="divider"></div>
-      <p class="award-desc">Recognized by the <strong>Government e-Marketplace (GeM)</strong>, Vajreshwari Enterprises was honored with the prestigious <strong>Top Sellers (Women Entrepreneurs) 2023</strong> award at Commerce Bhavan, New Delhi.</p>
-      <ul class="award-highlights">
-        <li><strong>Category:</strong> Top Sellers (Women Entrepreneurs) 2023</li>
-        <li><strong>Awarded By:</strong> Government e-Marketplace (GeM), Commerce Bhavan</li>
-        <li><strong>Achievement:</strong> Highest work order execution &amp; 100% compliance</li>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html" class="active">About Us</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="clients.html">Clients &amp; Coverage</a></li>
+        <li><a href="contact.html" class="nav-cta">Contact Us</a></li>
       </ul>
-    </div>
-  </div>
-</section>
+      <div class="hamburger" onclick="this.closest('nav').classList.toggle('open')">
+        <span></span><span></span><span></span></div>
+    </nav>
 
-<!-- MODERATE LIGHT UNBOXED CREATIVE FOOTER -->
-<!-- FOOTER -->
-<footer class="creative-footer">
-  <div class="creative-footer-wrap">
-    
-    <!-- Main 3-Column Grid -->
-    <div class="footer-grid">
+    <!-- HERO -->
+    <section class="about-hero">
+      <img src="images/about_hero_banner.png" alt="Vajreshwari Enterprises - Serving Since 2009"
+        class="about-hero-img" />
+    </section>
 
-      <!-- Column 1: Brand Info -->
-      <div class="f-brand-col">
-        <div class="f-brand-header">
-          <img src="images/ve_logo.png" alt="Vajreshwari Enterprises Logo" class="f-logo-img"/>
-          <div>
-            <div class="f-brand-name">Vajreshwari Enterprises</div>
-            <div class="f-brand-sub">Serving Since 2009</div>
+    <!-- FOUNDER -->
+    <section class="founder-section">
+      <div class="founder-grid">
+        <div class="founder-img-wrap">
+          <img src="images/director_award.jpg"
+            alt="Sneh Gupta — Director, Vajreshwari Enterprises — Best Entrepreneur Award 2023"
+            style="object-fit:cover;object-position:center top;max-height:460px;border-radius:20px;" />
+          <div class="founder-badge">
+            <strong>2009</strong>
+            <span>Founded Year</span>
           </div>
         </div>
-        <p class="f-brand-desc">India&#39;s premier transportation, emergency fleet &amp; manpower service provider. Serving GAIL, HPCL, ONGC, ISRO &amp; top PSUs across 28+ states.</p>
-      </div>
-
-      <!-- Column 2: Information & Legal -->
-      <div>
-        <div class="f-col-title">Information</div>
-        <ul class="f-links">
-          <li><a href="contact.html#faq">FAQ</a></li>
-          <li><a href="contact.html#privacy">Privacy Policy</a></li>
-          <li><a href="contact.html#terms">Terms of Service</a></li>
-          <li><a href="about.html#compliance">Compliance &amp; Safety</a></li>
-        </ul>
-      </div>
-
-      <!-- Column 3: Contact Info -->
-      <div>
-        <div class="f-col-title">Contact Us</div>
-        <div class="f-contact-list">
-          <a href="tel:+919414568241" class="f-contact-item">
-            <div class="f-contact-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00a86b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
-              </svg>
+        <div class="founder-content">
+          <div class="bio-tag">Leadership</div>
+          <div class="section-tag">Meet Our Director</div>
+          <h2 class="section-title">Sneh Gupta — <span>Visionary Leader</span></h2>
+          <div class="divider"></div>
+          <blockquote>"A visionary with big dreams, determined to redefine transportation and logistics across India."
+          </blockquote>
+          <p style="color:#475569;line-height:1.75;margin-bottom:16px;">An alumnus of <strong
+              style="color:#0a1f44;">NMIMS, Mumbai</strong>, Ms. Sneh Gupta began her career with Avanse Financial
+            Services, gaining deep operational expertise in finance. Armed with that discipline, he pivoted to
+            entrepreneurship — building Vajreshwari Enterprises from the ground up.</p>
+          <p style="color:#475569;line-height:1.75;margin-bottom:24px;">Today, she leads <strong
+              style="color:#0a1f44;">3 companies</strong> — Vajreshwari Enterprises, M/s RC Gupta, and Krady Solutions
+            Pvt Ltd — with a <strong style="color:#0a1f44;">core team of 25</strong> at headquarter and over <strong
+              style="color:#e63946;">1,200+ employees across PAN India.</strong></p>
+          <div class="stats-row">
+            <div class="stat-card">
+              <div class="stat-number">3</div>
+              <div class="stat-label">Companies Led</div>
             </div>
-            <div class="f-contact-text">
-              <span class="f-contact-lbl">Phone</span>
-              <span class="f-contact-val">+91 94145 68241</span>
+            <div class="stat-card">
+              <div class="stat-number">25<span>+</span></div>
+              <div class="stat-label">Core Team (HQ)</div>
             </div>
-          </a>
-          <a href="mailto:vajreshwari.enterprises2009@gmail.com" class="f-contact-item">
-            <div class="f-contact-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00a86b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-                <polyline points="22,6 12,13 2,6"/>
-              </svg>
+            <div class="stat-card">
+              <div class="stat-number">1200<span>+</span></div>
+              <div class="stat-label">PAN India Employees</div>
             </div>
-            <div class="f-contact-text">
-              <span class="f-contact-lbl">Email</span>
-              <span class="f-contact-val">vajreshwari.enterprises2009@gmail.com</span>
-            </div>
-          </a>
-          <a href="https://www.google.com/maps/place/25%C2%B009'52.6%22N+75%C2%B050'01.4%22E/@25.1645985,75.8311348,17z/data=!3m1!4b1!4m4!3m3!8m2!3d25.1645985!4d75.8337097?hl=en&amp;entry=ttu" target="_blank" rel="noopener noreferrer" class="f-contact-item">
-            <div class="f-contact-icon">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00a86b" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-                <circle cx="12" cy="10" r="3"/>
-              </svg>
-            </div>
-            <div class="f-contact-text">
-              <span class="f-contact-lbl">Headquarters 📍</span>
-              <span class="f-contact-val">25°09'52.6"N 75°50'01.4"E, Rajasthan</span>
-            </div>
-          </a>
+          </div>
         </div>
       </div>
+    </section>
 
-    </div>
+    <!-- COMPANIES -->
+    <section class="companies-section">
+      <div class="section-header center">
+        <div class="section-tag">Our Group</div>
+        <h2 class="section-title">Three Companies, <span>One Vision</span></h2>
+        <div class="divider center"></div>
+        <p class="section-subtitle">Together forming one of India's most comprehensive transportation and logistics
+          groups.</p>
+      </div>
+      <div class="companies-grid">
+        <div class="company-card">
+          <div class="company-card-header">
+            <h3>Vajreshwari Enterprises</h3>
+            <div class="since">▸ Serving Since 2009</div>
+          </div>
+          <div class="company-card-body">
+            <div class="company-metric"><span class="label">Work Orders Awarded</span><span
+                class="value green">135+</span></div>
+            <div class="company-metric"><span class="label">Vehicles Deployed</span><span
+                class="value green">200+</span></div>
+            <div class="company-metric"><span class="label">Drivers Employed</span><span class="value">400+</span></div>
+            <div class="company-metric"><span class="label">ESI + EPF Enrolled</span><span class="value">370+</span>
+            </div>
+            <div class="company-metric"><span class="label">Total Work Order Value</span><span
+                class="value green">₹148.5 Cr+</span></div>
+          </div>
+        </div>
+        <div class="company-card">
+          <div class="company-card-header" style="background:linear-gradient(135deg,#007a4d,#00a86b);">
+            <h3>M/s RC Gupta</h3>
+            <div class="since">▸ Serving Since 2002</div>
+          </div>
+          <div class="company-card-body">
+            <div class="company-metric"><span class="label">Work Orders Awarded</span><span
+                class="value green">120+</span></div>
+            <div class="company-metric"><span class="label">Vehicles Deployed</span><span
+                class="value green">350+</span></div>
+            <div class="company-metric"><span class="label">Drivers Employed</span><span class="value">700+</span></div>
+            <div class="company-metric"><span class="label">ESI + EPF Enrolled</span><span class="value">700+</span>
+            </div>
+            <div class="company-metric"><span class="label">Total Work Order Value</span><span
+                class="value green">₹332.5 Cr+</span></div>
+          </div>
+        </div>
+        <div class="company-card">
+          <div class="company-card-header" style="background:linear-gradient(135deg,#1a3366,#2a4d8c);">
+            <h3>Krady Solutions Pvt Ltd</h3>
+            <div class="since">▸ Technology &amp; Solutions Arm</div>
+          </div>
+          <div class="company-card-body">
+            <div class="company-metric"><span class="label">Sector</span><span class="value">Technology</span></div>
+            <div class="company-metric"><span class="label">Role</span><span class="value">Digital Solutions</span>
+            </div>
+            <div class="company-metric"><span class="label">Focus</span><span class="value">Innovation</span></div>
+            <div class="company-metric"><span class="label">Integration</span><span class="value">Group
+                Operations</span></div>
+            <div class="company-metric"><span class="label">Status</span><span class="value green">Active</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-    <!-- Bottom Bar -->
-    <div class="f-bottom-bar">
-      <div class="f-copyright">&copy; 2025 <strong>Vajreshwari Enterprises</strong>. All rights reserved.</div>
-    </div>
+    <!-- OUR JOURNEY -->
+    <section class="journey-section" id="our-journey">
+      <div class="journey-header">
+        <div class="journey-tag">Our Journey</div>
+        <h2>OUR JOURNEY: Our Road from <span>Vision to Impact</span></h2>
+        <p>From a single vehicle in 2000 to ₹899 Cr+ in work orders — every milestone tells our story.</p>
+      </div>
+      <div class="journey-timeline">
+        <div class="journey-grid">
+
+          <!-- TOP CARD 1 -->
+          <div class="journey-card jc-top-1 reveal">
+            <div class="jc-watermark">01</div>
+            <div class="jc-card-top">
+              <span class="jc-date">2000 – 2008</span>
+            </div>
+            <h3 class="jc-title">The Humble Beginning</h3>
+            <p class="jc-desc">M/s RC Gupta established, executing first transport contracts. Secured initial trust with
+              giants like NPCIL and GAIL, delivering ₹4.5+ Cr with a basic fleet.</p>
+          </div>
+
+          <!-- TOP CARD 3 -->
+          <div class="journey-card jc-top-3 reveal">
+            <div class="jc-watermark">03</div>
+            <div class="jc-card-top">
+              <span class="jc-date">2015 – 2019</span>
+            </div>
+            <h3 class="jc-title">Scaling the Fleet</h3>
+            <p class="jc-desc">Diversified operations by introducing Buses and Multi-Utility Vehicles. Expanded regional
+              footprint heavily with GAIL Gas Ltd., executing high-volume contracts worth over ₹160 Cr.</p>
+          </div>
+
+          <!-- TOP CARD 5 -->
+          <div class="journey-card jc-top-5 reveal">
+            <div class="jc-watermark">05</div>
+            <div class="jc-card-top">
+              <span class="jc-date">2024 &amp; Beyond</span>
+            </div>
+            <h3 class="jc-title">Driving Innovation</h3>
+            <p class="jc-desc">Continuing the momentum with ₹207+ Cr in recent ongoing contracts. Upgrading to premium
+              fleets (Innova Crysta, Volvo) and specialized vehicles (Ambulances), towards sustainable logistics.</p>
+          </div>
+
+          <!-- CIRCLES ROW -->
+          <div class="journey-circles-row">
+            <div class="journey-circle jcircle-1">01</div>
+            <div class="journey-circle jcircle-2">02</div>
+            <div class="journey-circle jcircle-3">03</div>
+            <div class="journey-circle jcircle-4">04</div>
+            <div class="journey-circle jcircle-5">05</div>
+          </div>
+
+          <!-- BOTTOM CARD 2 -->
+          <div class="journey-card jc-bottom-2 reveal">
+            <div class="jc-watermark">02</div>
+            <div class="jc-card-top">
+              <span class="jc-date">2009 – 2014</span>
+            </div>
+            <h3 class="jc-title">Birth of Vajreshwari</h3>
+            <p class="jc-desc">Prateek Gupta &amp; Sneh Gupta officially establish Vajreshwari Enterprises. Brought
+              prestigious clients like ISRO onboard. Upgraded fleet to Scorpios &amp; Boleros, achieving a 10x growth
+              with ₹49.5+ Cr in contract value.</p>
+          </div>
+
+          <!-- BOTTOM CARD 4 -->
+          <div class="journey-card jc-bottom-4 reveal">
+            <div class="jc-watermark">04</div>
+            <div class="jc-card-top">
+              <span class="jc-date">2020 – 2023</span>
+            </div>
+            <h3 class="jc-title">Scale &amp; Recognition</h3>
+            <p class="jc-desc">Massive deployment (e.g., 89+ vehicles for IOAGPL) and introduced HCVs &amp; Emergency
+              Vehicles. Surpassed ₹477+ Cr in work orders and won the prestigious Best Entrepreneur Award on GEM Portal
+              (Dec 2023).</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- VALUES -->
+    <section class="values-section">
+      <div class="section-header center">
+        <div class="section-tag">Our Values</div>
+        <h2 class="section-title">What <span>Drives</span> Us</h2>
+        <div class="divider center"></div>
+      </div>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h4>Reliability</h4>
+          <p>Every vehicle delivered on time, every driver fully compliant. Our clients trust us because we never
+            compromise on commitment.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🛡️</div>
+          <h4>Safety First</h4>
+          <p>All vehicles insured, all drivers ESI & EPF enrolled. Safety is not an option — it's our non-negotiable
+            standard.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">🌏</div>
+          <h4>National Reach</h4>
+          <p>With presence across 28+ states, we bring local expertise and pan-India scale to every project we
+            undertake.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-icon">💡</div>
+          <h4>Innovation</h4>
+          <p>Through Krady Solutions, we continuously embrace technology to improve fleet management and service
+            quality.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- AWARD SECTION -->
+    <section class="award-section" id="award-section">
+      <div class="award-grid">
+        <div class="award-cert-wrap">
+          <div class="award-cert-card">
+            <img src="images/gem_award_certificate.jpg"
+              alt="Vajreshwari Enterprises – GeM Portal Top Sellers (Women Entrepreneurs) Certificate 2023"
+              class="award-cert-img" />
+            <div class="award-cert-badge">
+              <span>🏅</span> Official GeM Certificate 2023
+            </div>
+          </div>
+        </div>
+        <div class="award-content">
+          <div class="award-badge-tag">🏆 National Recognition</div>
+          <h2 class="award-title">Best Entrepreneur Award — <span>GEM Portal, PAN India</span></h2>
+          <div class="divider"></div>
+          <p class="award-desc">Recognized by the <strong>Government e-Marketplace (GeM)</strong>, Vajreshwari
+            Enterprises was honored with the prestigious <strong>Top Sellers (Women Entrepreneurs) 2023</strong> award
+            at Commerce Bhavan, New Delhi.</p>
+          <ul class="award-highlights">
+            <li><strong>Category:</strong> Top Sellers (Women Entrepreneurs) 2023</li>
+            <li><strong>Awarded By:</strong> Government e-Marketplace (GeM), Commerce Bhavan</li>
+            <li><strong>Achievement:</strong> Highest work order execution &amp; 100% compliance</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODERATE LIGHT UNBOXED CREATIVE FOOTER -->
+    <!-- FOOTER -->
+    <footer class="creative-footer">
+      <div class="creative-footer-wrap">
+
+        <!-- Main 3-Column Grid -->
+        <div class="footer-grid">
+
+          <!-- Column 1: Brand Info -->
+          <div class="f-brand-col">
+            <div class="f-brand-header">
+              <img src="images/ve_logo.png" alt="Vajreshwari Enterprises Logo" class="f-logo-img" />
+              <div>
+                <div class="f-brand-name">Vajreshwari Enterprises</div>
+                <div class="f-brand-sub">Serving Since 2009</div>
+              </div>
+            </div>
+            <p class="f-brand-desc">India&#39;s premier transportation, emergency fleet &amp; manpower service provider.
+              Serving GAIL, HPCL, ONGC, ISRO &amp; top PSUs across 28+ states.</p>
+          </div>
+
+          <!-- Column 2: Information & Legal -->
+          <div>
+            <div class="f-col-title">Information</div>
+            <ul class="f-links">
+              <li><a href="contact.html#faq">FAQ</a></li>
+              <li><a href="contact.html#privacy">Privacy Policy</a></li>
+              <li><a href="contact.html#terms">Terms of Service</a></li>
+              <li><a href="about.html#compliance">Compliance &amp; Safety</a></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Contact Info -->
+          <div>
+            <div class="f-col-title">Contact Us</div>
+            <div class="f-contact-list">
+              <a href="tel:+919414568241" class="f-contact-item">
+                <div class="f-contact-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00a86b" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path
+                      d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <div class="f-contact-text">
+                  <span class="f-contact-lbl">Phone</span>
+                  <span class="f-contact-val">+91 94145 68241</span>
+                </div>
+              </a>
+              <a href="mailto:vajreshwari.enterprises2009@gmail.com" class="f-contact-item">
+                <div class="f-contact-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00a86b" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                  </svg>
+                </div>
+                <div class="f-contact-text">
+                  <span class="f-contact-lbl">Email</span>
+                  <span class="f-contact-val">vajreshwari.enterprises2009@gmail.com</span>
+                </div>
+              </a>
+              <a href="https://www.google.com/maps/place/25%C2%B009'52.6%22N+75%C2%B050'01.4%22E/@25.1645985,75.8311348,17z/data=!3m1!4b1!4m4!3m3!8m2!3d25.1645985!4d75.8337097?hl=en&amp;entry=ttu"
+                target="_blank" rel="noopener noreferrer" class="f-contact-item">
+                <div class="f-contact-icon">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#00a86b" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
+                </div>
+                <div class="f-contact-text">
+                  <span class="f-contact-lbl">Headquarter</span>
+                  <span class="f-contact-val">Kota, Rajasthan</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="f-bottom-bar">
+          <div class="f-copyright">&copy; 2025 <strong>Vajreshwari Enterprises</strong>. All rights reserved.</div>
+        </div>
+
+      </div>
+    </footer>
 
   </div>
-</footer>
-
-</div>
-<script src="main.js"></script>
+  <script src="main.js"></script>
 </body>
+
 </html>
