@@ -193,36 +193,6 @@
   transform: scale(1.12);
   box-shadow: 0 12px 32px rgba(37, 211, 102, 0.65);
 }
-#whatsapp-float .wa-tooltip {
-  position: absolute;
-  right: 70px;
-  background: #0a1f44;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 700;
-  padding: 6px 14px;
-  border-radius: 8px;
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
-  font-family: 'Inter', sans-serif;
-}
-#whatsapp-float .wa-tooltip::after {
-  content: '';
-  position: absolute;
-  right: -6px;
-  top: 50%;
-  transform: translateY(-50%);
-  border-width: 6px 0 6px 6px;
-  border-style: solid;
-  border-color: transparent transparent transparent #0a1f44;
-}
-#whatsapp-float:hover .wa-tooltip {
-  opacity: 1;
-  right: 74px;
-}
 
 @keyframes waPulse {
   0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
