@@ -188,16 +188,30 @@ nav.scrolled {
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.6);
 }
 
-/* ROW 1: FAR LEFT LOGO IMAGE & CENTERED SUB-TEXT ON PC */
+/* GLOBAL NAV LINK COLOR OVERRIDES — PREVENTS BROWSER VISITED LINK PURPLE TINTING */
+.nav-logo, .nav-logo:link, .nav-logo:visited, .nav-logo:hover, .nav-logo:active {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.logo-name, .logo-name:link, .logo-name:visited, .logo-name:hover, .logo-name:active {
+  color: #ffffff !important;
+}
+
+.logo-sub, .logo-sub:link, .logo-sub:visited, .logo-sub:hover, .logo-sub:active {
+  color: #00c97f !important;
+}
+
+/* PC NAVBAR: LOGO IMAGE ONLY ON FAR LEFT, COMPANY NAME IN EXACT CENTER AT TOP */
 @media (min-width: 769px) {
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
-    padding: 12px 5% 8px;
+    padding: 14px 5% 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     background: rgba(6, 15, 36, 0.96);
     backdrop-filter: blur(20px) saturate(180%);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
@@ -208,39 +222,37 @@ nav.scrolled {
   .nav-logo {
     display: flex !important;
     align-items: center !important;
-    justify-content: flex-start !important;
-    margin-right: auto !important;
-    margin-left: 0 !important;
+    justify-content: center !important;
+    width: 100% !important;
+    max-width: 1280px !important;
     position: relative !important;
     text-decoration: none !important;
-    gap: 12px !important;
-    width: auto !important;
+    margin: 0 auto !important;
   }
   .nav-logo img, .nav-logo .logo-icon {
-    position: static !important;
-    transform: none !important;
-    top: auto !important;
-    left: auto !important;
+    position: absolute !important;
+    left: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    height: 44px !important;
+    width: 44px !important;
     mix-blend-mode: screen;
     filter: brightness(1.2) contrast(1.1);
     border-radius: 0 !important;
     background: transparent !important;
-    height: 42px !important;
-    width: 42px !important;
-    flex-shrink: 0 !important;
   }
   .logo-text {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    margin: 0 !important;
+    margin: 0 auto !important;
   }
   .logo-name {
-    font-size: 18px !important;
+    font-size: 19px !important;
     font-weight: 800 !important;
     color: #ffffff !important;
-    letter-spacing: 0.6px !important;
+    letter-spacing: 0.8px !important;
     line-height: 1.1 !important;
     text-align: center !important;
     white-space: nowrap !important;
@@ -249,9 +261,9 @@ nav.scrolled {
     font-size: 9.5px !important;
     color: #00c97f !important;
     font-weight: 700 !important;
-    letter-spacing: 2px !important;
+    letter-spacing: 2.2px !important;
     text-transform: uppercase !important;
-    margin-top: 2px !important;
+    margin-top: 3px !important;
     text-align: center !important;
     width: 100% !important;
     white-space: nowrap !important;
@@ -302,15 +314,38 @@ nav.open .hamburger span:nth-child(3) { transform: rotate(-45deg) translate(5px,
     justify-content: space-between !important;
     align-items: center !important;
     padding: 10px 4% !important;
+    background: #060f24 !important;
+    height: 64px !important;
   }
   .nav-logo {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    justify-content: flex-start !important;
+    gap: 10px !important;
+    width: auto !important;
+    position: static !important;
+    margin: 0 !important;
+    text-decoration: none !important;
     max-width: calc(100% - 50px) !important;
   }
-  .logo-name { font-size: 14.5px !important; }
-  .logo-sub { font-size: 8px !important; }
+  .nav-logo img, .nav-logo .logo-icon {
+    position: static !important;
+    transform: none !important;
+    top: auto !important;
+    left: auto !important;
+    height: 36px !important;
+    width: 36px !important;
+    flex-shrink: 0 !important;
+  }
+  .logo-text {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+    margin: 0 !important;
+  }
+  .logo-name { font-size: 15px !important; font-weight: 800 !important; color: #ffffff !important; line-height: 1.1 !important; white-space: nowrap !important; }
+  .logo-sub { font-size: 8.5px !important; font-weight: 700 !important; color: #00c97f !important; letter-spacing: 1.5px !important; text-transform: uppercase !important; margin-top: 2px !important; white-space: nowrap !important; }
   .nav-links {
     display: none; flex-direction: column; position: fixed;
     top: 64px; left: 0; right: 0; background: rgba(6, 15, 36, 0.99);
